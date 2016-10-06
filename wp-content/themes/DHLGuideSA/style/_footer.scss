@@ -1,0 +1,54 @@
+
+footer {
+  padding-top: 23px;
+  padding-bottom: 10px;
+  background: #dbdbdb;
+  margin-bottom: 30px;
+  .social {
+    position: relative;
+    li {
+      text-align: center;
+
+      top: -15px;
+      list-style: none;
+      @include desktop {
+        position: absolute;
+      }
+      img {
+        width: 45px;
+      }
+    }
+
+  }
+
+  ul.footerMenu {
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    padding: 0;
+    li {
+      display: inline-block;
+      margin: 0 5px;
+      &:first-child {
+        &:after {
+          content: '|';
+          margin-left: 15px;
+        }
+      }
+      a {
+        color: #333333;
+        &:hover {
+          color: $dhlRed;
+        }
+
+      }
+    }
+  }
+  .copyright {
+    text-align: center;
+    @include desktop {
+      text-align: right;
+    }
+  }
+
+}
