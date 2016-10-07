@@ -620,8 +620,14 @@ function html5_shortcode_demo_2($atts, $content = null) // Demo Heading H2 short
 
 function wpdocs_my_search_form( $form ) {
 $form = '<form role="search" method="get" id="searchform" class="searchform search" action="' . home_url( '/' ) . '" >
-<div><input type="text" placeholder="Search" value="' . get_search_query() . '" name="s" id="s" />
+
+<div id="headerSearchForm">
+<div id="formComponents">
+<input type="text" placeholder="Search" value="' . get_search_query() . '" name="s" id="s" />
 <button type="submit" id="searchsubmit" ><span class="glyphicon glyphicon-search"></span></button>
+</div>
+<span class="glyphicon glyphicon-search showSearch"></span>
+
 </div>
 </form>';
 

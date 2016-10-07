@@ -26,6 +26,14 @@
 		$('.bxslider').bxSlider();
 
 
+        //Search Bar js for desktop
+
+        $('.showSearch').click(function () {
+            $(this).toggleClass('active');
+            $('#formComponents').slideToggle();
+
+        })
+
 
 
 

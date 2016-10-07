@@ -49,7 +49,9 @@
 						</div>
 						<!-- Collect the nav links, forms, and other content for toggling -->
 						<div class="collapse navbar-collapse" id="navbar-collapse">
-							<?php get_search_form()?>
+							<div class="searchFormContainer">
+								<?php get_search_form()?>
+							</div>
 							<?php html5blank_nav(); ?>
 						</div>
 
@@ -57,8 +59,6 @@
 					<!-- /nav -->
 
 				</div>
-
-
 
 			</header>
 			<!-- /header -->

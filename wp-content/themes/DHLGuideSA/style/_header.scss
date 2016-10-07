@@ -19,7 +19,7 @@ body {
     z-index: 1;
     position: relative;
 
-    @include tablet {
+    @include desktop {
       margin-top: 20px;
       padding-left: 35px;
       padding-right: 35px;
@@ -50,6 +50,13 @@ body {
           border: none;
           position: relative;
           z-index: 3;
+          @include tablet {
+            padding-top: 20px;
+          }
+          @include desktop {
+            padding-top: 0;
+          }
+
           .navbar-toggle {
             &.sidebar {
               position: relative;
@@ -99,13 +106,119 @@ body {
               right: auto;
               top: auto;
             }
-            form.search {
+            .searchFormContainer {
+              form.search {
+                @include desktop {
+                  float: right;
+                }
+                #headerSearchForm {
+                  position: relative;
+                  input {
+                    width: 100%;
+                    padding: 10px 40px 10px 3px;
+                    border: none;
+                    &:focus {
+                      border: none;
+                      outline: none;
+                    }
+                  }
+                  button, .showSearch {
+                    position: absolute;
+                    height: 100%;
+                    top: 0;
+                    right: 0;
+                    padding: 4px 0 0 0;
+                    font-size: 20px;
+                    border: none;
+                    background: #e7e7e7;
+                    &:focus {
+                      border: none;
+                      outline: none;
+                    }
 
+                  }
+                  button span, .showSearch {
+                    color: $dhlRed;
+                  }
+                  .showSearch {
+                    display: none;
+
+                  }
+                  @include tablet {
+                    position: absolute;
+                    right: 15px;
+                    top: -10px;
+                    input {
+                      //display: none;
+                      padding: 5px 40px 5px 3px;
+                    }
+                    button, .showSearch {
+                      background: $dhlYellow;
+                      padding: 3px 5px;
+                    }
+                  }
+                  @include desktop {
+                    position: relative;
+                    float: right;
+                    input {
+                      display: none;
+                    }
+                    button span, .showSearch {
+                      position: relative;
+                      top: 0;
+                    }
+                    .showSearch {
+                      display: block;
+                      &.active {
+                        background: $dhlRed;
+                        color: $dhlYellow;
+                      }
+                    }
+                    #formComponents {
+                      display: none;
+                      position: absolute;
+                      top: 30px;
+                      height: 32px;
+                      overflow: hidden;
+                      right: 0;
+                      width: 251px;
+                      input, button {
+                        display: block;
+                        position: absolute;
+                        right: 0;
+                      }
+                      button {
+                        background: none;
+                      }
+
+                    }
+                    input {
+                      width: 250px;
+                      right: 0;
+                    }
+                    button {
+
+                    }
+
+                  }
+
+                }
+
+              }
               @include desktop {
+                position: relative;
+                display: block;
                 float: right;
+                top: 20px;
+                right: -20px;
               }
             }
+
             ul.navbar-nav {
+              @include desktop {
+                padding-right: 50px;
+              }
+
               li {
                 a {
                   color: #333333;
