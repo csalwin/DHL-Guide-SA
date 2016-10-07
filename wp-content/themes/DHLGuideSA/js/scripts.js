@@ -32,7 +32,8 @@
             $(this).toggleClass('active');
             $('#formComponents').slideToggle();
 
-        })
+        });
+
 
 
 

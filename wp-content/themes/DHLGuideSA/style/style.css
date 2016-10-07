@@ -292,6 +292,49 @@ body {
     .pageHome section.guidelines .pageWrapper .textWrapper {
       padding: 15px 0; }
 
+.singleCountries section.introduction .countryFlag {
+  padding: 30px; }
+  @media only screen and (min-width: 768px) {
+    .singleCountries section.introduction .countryFlag {
+      padding: 0; } }
+  @media only screen and (min-width: 1100px) {
+    .singleCountries section.introduction .countryFlag {
+      padding: 30px; } }
+  .singleCountries section.introduction .countryFlag img {
+    max-width: 150px;
+    margin: 0 auto;
+    display: block; }
+.singleCountries section.introduction .countryTitle {
+  margin-top: 10px;
+  text-align: center; }
+  @media only screen and (min-width: 768px) {
+    .singleCountries section.introduction .countryTitle {
+      margin-top: 0;
+      text-align: left; } }
+  @media only screen and (min-width: 1100px) {
+    .singleCountries section.introduction .countryTitle {
+      margin-top: 20px; } }
+.singleCountries section.countryInformation {
+  border: 1px solid #6c6c6c; }
+  .singleCountries section.countryInformation .yellowHeading {
+    background: #ffcc00;
+    text-align: center;
+    padding: 2px;
+    margin-bottom: 5px; }
+    .singleCountries section.countryInformation .yellowHeading h2 {
+      color: #d40511; }
+  .singleCountries section.countryInformation .informationContent {
+    padding: 20px; }
+
+.usefulInfo section.introduction h1 {
+  text-align: center;
+  margin-top: 20px; }
+.usefulInfo section.introduction .theContent {
+  padding: 10px; }
+  @media only screen and (min-width: 1100px) {
+    .usefulInfo section.introduction .theContent {
+      padding: 10px 150px; } }
+
 footer {
   padding-top: 23px;
   padding-bottom: 10px;

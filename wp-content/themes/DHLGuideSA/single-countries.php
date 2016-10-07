@@ -8,15 +8,15 @@
 		</section>
 		<section class="row introduction">
 
-			<div class="col-xs-12 col-sm-4">
+			<div class="col-xs-12 col-sm-2 countryFlag">
 				<?php
 				$flag = get_field('country_flag'); ?>
 				<img src="<?php echo $flag["url"]?>" alt="<?php echo $flag['alt']?>" title="<?php echo $flag['title'] ?>"/>
 			</div>
-			<div class="col-xs-12 col-sm-8">
-				<h1 class="text-center"><?php the_title();?></h1>
+			<div class="col-xs-12 col-sm-10 countryTitle">
+				<h1><?php the_title();?></h1>
 			</div>
-			<div class="col-xs-12">
+			<div class="col-xs-12 col-sm-10">
 				<p><?php echo get_field('about_country') ?></p>
 			</div>
 
