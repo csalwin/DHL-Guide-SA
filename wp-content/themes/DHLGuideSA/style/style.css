@@ -214,7 +214,7 @@ body {
                 right: -20px; } }
             @media only screen and (min-width: 1100px) {
               body .headerContainer .header .headerWrapper .navbar .navbar-collapse ul.navbar-nav {
-                padding-right: 50px; } }
+                padding-right: 20px; } }
             body .headerContainer .header .headerWrapper .navbar .navbar-collapse ul.navbar-nav li a {
               color: #333333; }
             body .headerContainer .header .headerWrapper .navbar .navbar-collapse ul.navbar-nav li.current-menu-item a {
@@ -274,15 +274,28 @@ body {
     margin-bottom: 40px; }
     .pageHome section.countriesBar .countryWrapper {
       margin-top: 20px; }
-      .pageHome section.countriesBar .countryWrapper img {
-        width: 100%;
-        -webkit-box-shadow: 0px 5px 20px -2px rgba(50, 50, 50, 0.77);
-        -moz-box-shadow: 0px 5px 20px -2px rgba(50, 50, 50, 0.77);
-        box-shadow: 0px 5px 20px -2px rgba(50, 50, 50, 0.77); }
-        .pageHome section.countriesBar .countryWrapper img:hover {
-          -webkit-box-shadow: 0px 5px 20px -2px rgba(212, 5, 17, 0.17);
-          -moz-box-shadow: 0px 5px 20px -2px rgba(212, 5, 17, 0.17);
-          box-shadow: 0px 5px 20px -2px rgba(212, 5, 17, 0.17); }
+      .pageHome section.countriesBar .countryWrapper a {
+        position: relative;
+        display: block; }
+        .pageHome section.countriesBar .countryWrapper a .hoverOverlay {
+          display: none;
+          top: 0;
+          left: 0;
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          background: rgba(50, 50, 50, 0.3); }
+        .pageHome section.countriesBar .countryWrapper a img {
+          width: 100%;
+          -webkit-box-shadow: 0px 5px 20px -2px rgba(50, 50, 50, 0.77);
+          -moz-box-shadow: 0px 5px 20px -2px rgba(50, 50, 50, 0.77);
+          box-shadow: 0px 5px 20px -2px rgba(50, 50, 50, 0.77); }
+        .pageHome section.countriesBar .countryWrapper a:hover .hoverOverlay {
+          display: block; }
+        .pageHome section.countriesBar .countryWrapper a:hover img {
+          -webkit-box-shadow: 0px 5px 20px -2px rgba(50, 50, 50, 0.17);
+          -moz-box-shadow: 0px 5px 20px -2px rgba(50, 50, 50, 0.17);
+          box-shadow: 0px 5px 20px -2px rgba(50, 50, 50, 0.17); }
   .pageHome section.guidelines .pageWrapper {
     border: 1px solid #dbdbdb;
     margin-bottom: 25px;

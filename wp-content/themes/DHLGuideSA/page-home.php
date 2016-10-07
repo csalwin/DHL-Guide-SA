@@ -77,7 +77,10 @@ get_header();?>
 
                         ?>
                         <div class="countryWrapper col-xs-6 col-md-3">
-                            <a href="<?php the_permalink(); ?>"><img src="<?php echo $image['sizes']['large']?>" alt="<?php echo $image['alt']?>" title="<?php echo $image['title'] ?>"/></a>
+                            <a href="<?php the_permalink(); ?>">
+                                <img src="<?php echo $image['sizes']['large']?>" alt="<?php echo $image['alt']?>" title="<?php echo $image['title'] ?>"/>
+                                <div class="hoverOverlay"></div>
+                            </a>
                         </div>
                         <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
                     <?php endif;
