@@ -163,6 +163,11 @@ get_header();?>
     </section>
 </div>
 
+<!--TODO set this up properly-->
+<div class="feedback" style="background: #d40511; width: 100%; height: 50px; position: fixed; bottom: 0; left: 0;">
+    <h3>Feedback</h3>
+</div>
+
 
 
 

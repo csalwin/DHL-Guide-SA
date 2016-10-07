@@ -158,6 +158,8 @@ body {
                 body .headerContainer .header .headerWrapper .navbar .navbar-collapse .searchFormContainer form.search #headerSearchForm button:focus, body .headerContainer .header .headerWrapper .navbar .navbar-collapse .searchFormContainer form.search #headerSearchForm .showSearch:focus {
                   border: none;
                   outline: none; }
+              body .headerContainer .header .headerWrapper .navbar .navbar-collapse .searchFormContainer form.search #headerSearchForm #formComponents {
+                display: block; }
               body .headerContainer .header .headerWrapper .navbar .navbar-collapse .searchFormContainer form.search #headerSearchForm button span, body .headerContainer .header .headerWrapper .navbar .navbar-collapse .searchFormContainer form.search #headerSearchForm .showSearch {
                 color: #d40511; }
               body .headerContainer .header .headerWrapper .navbar .navbar-collapse .searchFormContainer form.search #headerSearchForm .showSearch {
