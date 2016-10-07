@@ -43,12 +43,12 @@ get_header();?>
                             <div class="panel panel-default">
                                 <div class="panel-heading" role="tab" id="heading<?php echo $post->post_name?>">
                                     <h4 class="panel-title">
-                                        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse<?php echo $post->post_name?>" aria-expanded="true" aria-controls="collapse<?php echo $post->post_name?>">
+                                        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#<?php echo $post->post_name?>" aria-expanded="true" aria-controls="<?php echo $post->post_name?>">
                                             <?php the_title(); ?>
                                         </a>
                                     </h4>
                                 </div>
-                                <div id="collapse<?php echo $post->post_name?>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading<?php echo $post->post_name?>">
+                                <div id="<?php echo $post->post_name?>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="<?php echo $post->post_name?>">
                                     <div class="panel-body">
                                         <?php the_content(); ?>
                                     </div>

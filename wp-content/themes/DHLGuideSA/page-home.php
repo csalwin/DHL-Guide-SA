@@ -126,7 +126,7 @@ get_header();?>
                                 <img src="<?php echo $post_image['sizes']['large']?>" alt="<?php echo $post_image['alt']?>" title="<?php echo $post_image['title'] ?>"/>
                                 <div class="textWrapper text-center">
                                     <p><?php the_title(); ?></p>
-                                    <a href="#"><?php echo $post_link_text; ?></a>
+                                    <a href="<?php echo get_home_url().'/useful-information/#'.$post->post_name; ?>"><?php echo $post_link_text; ?></a>
                                 </div>
                             </div>
 
