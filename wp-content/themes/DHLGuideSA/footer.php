@@ -21,8 +21,50 @@
 				</p>
 				<!-- /copyright -->
 
+
 			</footer>
 			<!-- /footer -->
+
+<!--	Feedback	-->
+
+			<div class="feedbackBar">
+				<div class="container">
+					<div class="col-xs-12 text-center">
+						<p>What's missing from this page? Do let us know if there's anything that you'd like to see feature. <strong>We'd love to here your <a href="#" data-toggle="modal" data-target="#myModal">feedback</a></strong></p>
+					</div>
+				</div>
+			</div>
+
+
+			<!-- Modal -->
+			<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							<h4 class="modal-title" id="myModalLabel">Leave your feedback</h4>
+						</div>
+						<div class="modal-body">
+							<form>
+								<label>Name*</label><br/>
+								<input type="text"><br/>
+								<label>Email*</label><br/>
+								<input type="text"><br/>
+								<label>Comment*</label><br/>
+								<textarea></textarea><br/>
+
+							</form>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+							<button type="button" class="btn btn-primary">Save changes</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+
 
 		<?php wp_footer(); ?>
 

@@ -40,13 +40,16 @@ get_header();?>
                         $post = $post_object;
                         setup_postdata( $post );
                         ?>
-                            <div class="panel panel-default">
+                            <div class="panel">
                                 <div class="panel-heading" role="tab" id="heading<?php echo $post->post_name?>">
-                                    <h4 class="panel-title">
-                                        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#<?php echo $post->post_name?>" aria-expanded="true" aria-controls="<?php echo $post->post_name?>">
-                                            <?php the_title(); ?>
-                                        </a>
-                                    </h4>
+
+                                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#<?php echo $post->post_name?>" aria-expanded="true" aria-controls="<?php echo $post->post_name?>">
+                                        <div class="panel-heading-content-wrapper">
+                                            <h4 class="panel-title">
+                                                <?php the_title(); ?>
+                                            </h4>
+                                        </div>
+                                    </a>
                                 </div>
                                 <div id="<?php echo $post->post_name?>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="<?php echo $post->post_name?>">
                                     <div class="panel-body">

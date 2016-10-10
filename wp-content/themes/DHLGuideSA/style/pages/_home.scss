@@ -60,7 +60,7 @@
       }
     }//End of headerSlider
     .heading {
-      font-family: 'FrutigerLTPro-Light', Verdana, sans-serif;
+      //font-family: 'Frutiger Neue LT W06 Co1366734', Verdana, sans-serif;
       font-size: 36px;
       font-weight: 100;
     }// End of heading
@@ -74,6 +74,7 @@
         a {
           position: relative;
           display: block;
+
           .hoverOverlay {
             display: none;
             top: 0;

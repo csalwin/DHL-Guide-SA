@@ -3,7 +3,7 @@ footer {
   padding-top: 23px;
   padding-bottom: 10px;
   background: #dbdbdb;
-  margin-bottom: 30px;
+  margin-bottom: 55px;
   .social {
     position: relative;
     li {
@@ -52,3 +52,22 @@ footer {
   }
 
 }
+
+.feedbackBar {
+  display: none;
+  background: $dhlRed;
+  padding: 10px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  p {
+    color: #ffffff;
+    margin-bottom: 5px;
+    strong, a {
+      font-family: 'Frutiger Neue LT W06 Bold';
+      color: #ffffff;
+    }
+  }
+
+}
+

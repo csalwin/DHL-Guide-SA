@@ -33,7 +33,45 @@
 
         });
 
+
+       // FeedbackBar
+
+        if ($(document).height() <= $(window).height()) {
+            $('.feedbackBar').show();
+        }
+        $(window).scroll(function() {
+
+                if ($(window).scrollTop() + $(window).height() > $(document).height() - 100) {
+
+                        $('.feedbackBar').slideDown();
+
+                } else {
+
+                        $('.feedbackBar').slideUp();
+
+                }
+
+        });
+
+
+        //scroll to ID
+        if(window.location.hash) {
+            $('html,body').animate(
+                {
+                    scrollTop: $(target).offset().top
+                },2000,function()
+                {
+                    location.hash = target;
+                });
+
+        } else {
+            // Fragment doesn't exist
+        }
+
 	});
+
+    //TODO add this to the line to check if its already shown
+    // if ($('.feedbackBar').offsetParent === null) {
 
 
 

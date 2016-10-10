@@ -1,28 +1,38 @@
+@import url("http://fast.fonts.net/t/1.css?apiType=css&projectid=a3f6fe50-744f-4123-952d-600048fa8a7c");
 @font-face {
-  font-family: 'Furutiger';
-  src: url("../fonts/FrutigerLTStd-Cn.otf") format("opentype"); }
+  font-family: "Frutiger Neue LT W06 Light";
+  src: url("fonts/FrutigerNew/eacbf6c2-ef44-4857-b153-3f8fe906e053.eot?#iefix");
+  src: url("fonts/FrutigerNew/eacbf6c2-ef44-4857-b153-3f8fe906e053.eot?#iefix") format("eot"), url("fonts/FrutigerNew/5d45c016-7f3c-446c-8154-eb18bb0da14c.woff2") format("woff2"), url("fonts/FrutigerNew/3da96504-eecf-4043-8047-d6645d1fcf0c.woff") format("woff"), url("fonts/FrutigerNew/b01f2703-fd12-427a-a448-b3ee3214faeb.ttf") format("truetype"), url("fonts/FrutigerNew/460492af-db64-4559-b519-e74dc8a6705b.svg#460492af-db64-4559-b519-e74dc8a6705b") format("svg"); }
 @font-face {
-  font-family: 'FrutigerLTPro-Condensed';
-  src: url("fonts/frutiger/FrutigerLTPro-Condensed.eot?#iefix") format("embedded-opentype"), url("fonts/frutiger/FrutigerLTPro-Condensed.otf") format("opentype"), url("fonts/frutiger/FrutigerLTPro-Condensed.woff") format("woff"), url("fonts/frutiger/FrutigerLTPro-Condensed.ttf") format("truetype"), url("fonts/frutiger/FrutigerLTPro-Condensed.svg#FrutigerLTPro-Condensed") format("svg");
-  font-weight: normal;
-  font-style: normal; }
+  font-family: "Frutiger Neue LT W06 Light It";
+  src: url("fonts/FrutigerNew/8990cc5f-2126-43c8-8820-e0220f57a5d3.eot?#iefix");
+  src: url("fonts/FrutigerNew/8990cc5f-2126-43c8-8820-e0220f57a5d3.eot?#iefix") format("eot"), url("fonts/FrutigerNew/904df250-ff7d-46f3-aa47-12a18e42a291.woff2") format("woff2"), url("fonts/FrutigerNew/a0000522-ff4c-4f3a-8d95-2194ee9cc4d4.woff") format("woff"), url("fonts/FrutigerNew/3ba2cea6-247e-4656-86c3-8aa2dcc2a159.ttf") format("truetype"), url("fonts/FrutigerNew/70b7bc5c-53b0-4cab-808f-686bfb911a29.svg#70b7bc5c-53b0-4cab-808f-686bfb911a29") format("svg"); }
 @font-face {
-  font-family: 'FrutigerLTPro-Light';
-  src: url("fonts/frutiger/FrutigerLTPro-Light.eot?#iefix") format("embedded-opentype"), url("fonts/frutiger/FrutigerLTPro-Light.otf") format("opentype"), url("fonts/frutiger/FrutigerLTPro-Light.woff") format("woff"), url("fonts/frutiger/FrutigerLTPro-Light.ttf") format("truetype"), url("fonts/frutiger/FrutigerLTPro-Light.svg#FrutigerLTPro-Light") format("svg");
-  font-weight: normal;
-  font-style: normal; }
+  font-family: "Frutiger Neue LT W06 Regular";
+  src: url("fonts/FrutigerNew/faa5752a-e8aa-4792-b76e-06fdea92421d.eot?#iefix");
+  src: url("fonts/FrutigerNew/faa5752a-e8aa-4792-b76e-06fdea92421d.eot?#iefix") format("eot"), url("fonts/FrutigerNew/443d53e8-5a36-44d4-a132-02501f29ccb4.woff2") format("woff2"), url("fonts/FrutigerNew/e934c7fe-0eba-45c0-be91-b05ff19b5073.woff") format("woff"), url("fonts/FrutigerNew/a4b36fb8-d470-4a09-87d7-70de08efeeaf.ttf") format("truetype"), url("fonts/FrutigerNew/d02b10aa-8aa6-465e-b1ec-e3b7d90a01f4.svg#d02b10aa-8aa6-465e-b1ec-e3b7d90a01f4") format("svg"); }
 @font-face {
-  font-family: 'FrutigerLTPro-BlackCn';
-  src: url("fonts/frutiger/FrutigerLTPro-BlackCn.eot?#iefix") format("embedded-opentype"), url("fonts/frutiger/FrutigerLTPro-BlackCn.otf") format("opentype"), url("fonts/frutiger/FrutigerLTPro-BlackCn.woff") format("woff"), url("fonts/frutiger/FrutigerLTPro-BlackCn.ttf") format("truetype"), url("fonts/frutiger/FrutigerLTPro-BlackCn.svg#FrutigerLTPro-Black") format("svg");
-  font-weight: normal;
-  font-style: normal; }
+  font-family: "Frutiger Neue LT W06 Italic";
+  src: url("fonts/FrutigerNew/be6a8dc6-ac9c-40c1-a949-d3c10c947a7a.eot?#iefix");
+  src: url("fonts/FrutigerNew/be6a8dc6-ac9c-40c1-a949-d3c10c947a7a.eot?#iefix") format("eot"), url("fonts/FrutigerNew/128a37ae-cc59-4faa-a4f8-842979a9bf78.woff2") format("woff2"), url("fonts/FrutigerNew/4d8fb292-7151-44df-bcfc-f8270cbe3ab6.woff") format("woff"), url("fonts/FrutigerNew/31dc76a1-1188-4f13-b827-6d903108320a.ttf") format("truetype"), url("fonts/FrutigerNew/45c80bb3-132d-4953-8ad6-6705c53edcc4.svg#45c80bb3-132d-4953-8ad6-6705c53edcc4") format("svg"); }
 @font-face {
-  font-family: 'FrutigerLTPro-Roman';
-  src: url("fonts/frutiger/FrutigerLTPro-Roman.eot?#iefix") format("embedded-opentype"), url("fonts/frutiger/FrutigerLTPro-Roman.otf") format("opentype"), url("fonts/frutiger/FrutigerLTPro-Roman.woff") format("woff"), url("fonts/frutiger/FrutigerLTPro-Roman.ttf") format("truetype"), url("fonts/frutiger/FrutigerLTPro-Roman.svg#FrutigerLTPro-Roman") format("svg");
-  font-weight: normal;
-  font-style: normal; }
+  font-family: "Frutiger Neue LT W06 Bold";
+  src: url("fonts/FrutigerNew/5656fd28-0c8a-45fd-bd99-f3d798e777c5.eot?#iefix");
+  src: url("fonts/FrutigerNew/5656fd28-0c8a-45fd-bd99-f3d798e777c5.eot?#iefix") format("eot"), url("fonts/FrutigerNew/d13f4ce3-6d5f-4e11-b7a6-9cde6f1624a0.woff2") format("woff2"), url("fonts/FrutigerNew/9147fb15-b4da-4721-8ed8-d82293660aec.woff") format("woff"), url("fonts/FrutigerNew/82654d6a-ec17-4dcc-be94-5092663b0bd2.ttf") format("truetype"), url("fonts/FrutigerNew/2f96c1cb-f1c3-433f-aa09-21e3d556d1f6.svg#2f96c1cb-f1c3-433f-aa09-21e3d556d1f6") format("svg"); }
+@font-face {
+  font-family: "Frutiger Neue LT W06 Bold It";
+  src: url("fonts/FrutigerNew/a8b1dd7d-e6a6-4c67-882d-26821952f1c4.eot?#iefix");
+  src: url("fonts/FrutigerNew/a8b1dd7d-e6a6-4c67-882d-26821952f1c4.eot?#iefix") format("eot"), url("fonts/FrutigerNew/f0b6fc25-0ce8-493e-9ee4-551d039329dc.woff2") format("woff2"), url("fonts/FrutigerNew/38317c07-4f60-49f1-93e5-bba5c0c68a20.woff") format("woff"), url("fonts/FrutigerNew/e5005ac7-489a-4890-9558-bf4e35f35dca.ttf") format("truetype"), url("fonts/FrutigerNew/d209118f-44a7-4c6b-8ab8-5a698f2eed7b.svg#d209118f-44a7-4c6b-8ab8-5a698f2eed7b") format("svg"); }
+@font-face {
+  font-family: "Frutiger Neue LT W06 Co1366748";
+  src: url("fonts/FrutigerNew/7280e650-6082-47c6-b466-444dc54cb2d1.eot?#iefix");
+  src: url("fonts/FrutigerNew/7280e650-6082-47c6-b466-444dc54cb2d1.eot?#iefix") format("eot"), url("fonts/FrutigerNew/23c8fd07-fd70-4f71-8660-ee48fd5cdd78.woff2") format("woff2"), url("fonts/FrutigerNew/758b3adb-babc-432f-8224-6d5987a29d87.woff") format("woff"), url("fonts/FrutigerNew/a0db12d8-1ce6-447c-88db-a84df4843728.ttf") format("truetype"), url("fonts/FrutigerNew/85839fbf-2469-47f4-9297-e8ddadbb047f.svg#85839fbf-2469-47f4-9297-e8ddadbb047f") format("svg"); }
+@font-face {
+  font-family: "Frutiger Neue LT W06 Co1366734";
+  src: url("fonts/FrutigerNew/d91eade1-6945-4479-9a16-8066103e98f6.eot?#iefix");
+  src: url("fonts/FrutigerNew/d91eade1-6945-4479-9a16-8066103e98f6.eot?#iefix") format("eot"), url("fonts/FrutigerNew/2bcc8112-8888-4cab-a815-828849b896c0.woff2") format("woff2"), url("fonts/FrutigerNew/5b7e29c2-705a-4651-968e-212a5d6824d3.woff") format("woff"), url("fonts/FrutigerNew/d270ca1f-1440-40a6-9c25-bfa149ce0ca1.ttf") format("truetype"), url("fonts/FrutigerNew/46eb06c5-63b6-4b5d-9906-26549829e42f.svg#46eb06c5-63b6-4b5d-9906-26549829e42f") format("svg"); }
 html *, body * {
-  font-family: 'Furutiger', Verdana, sans-serif;
+  font-family: "Frutiger Neue LT W06 Light", Verdana, sans-serif;
   color: #252525; }
 
 body {
@@ -218,6 +228,7 @@ body {
             body .headerContainer .header .headerWrapper .navbar .navbar-collapse ul.navbar-nav li a {
               color: #333333; }
             body .headerContainer .header .headerWrapper .navbar .navbar-collapse ul.navbar-nav li.current-menu-item a {
+              font-family: 'Frutiger Neue LT W06 Bold';
               background: none;
               font-weight: bold; }
 
@@ -265,7 +276,6 @@ body {
               font-weight: normal;
               font-size: 40px; } }
   .pageHome section .heading {
-    font-family: 'FrutigerLTPro-Light', Verdana, sans-serif;
     font-size: 36px;
     font-weight: 100; }
   .pageHome section .headingTagLine {
@@ -347,12 +357,40 @@ body {
   @media only screen and (min-width: 1100px) {
     .usefulInfo section.introduction .theContent {
       padding: 10px 150px; } }
+.usefulInfo section.information .panel-group {
+  border: 1px solid #6f6f6f;
+  -webkit-box-shadow: 0px 5px 20px -2px rgba(50, 50, 50, 0.77);
+  -moz-box-shadow: 0px 5px 20px -2px rgba(50, 50, 50, 0.77);
+  box-shadow: 0px 5px 20px -2px rgba(50, 50, 50, 0.77); }
+  .usefulInfo section.information .panel-group .panel {
+    background: none;
+    border: none;
+    -webkit-box-shadow: none;
+    box-shadow: none; }
+    .usefulInfo section.information .panel-group .panel:last-child .panel-heading a.collapsed .panel-heading-content-wrapper {
+      border-bottom: none; }
+    .usefulInfo section.information .panel-group .panel .panel-heading {
+      border: none;
+      background: none;
+      padding: 0px 15px; }
+      .usefulInfo section.information .panel-group .panel .panel-heading a {
+        margin: 50px 0px;
+        border: none; }
+        .usefulInfo section.information .panel-group .panel .panel-heading a .panel-heading-content-wrapper {
+          border-bottom: 1px solid #c1c1c1;
+          padding: 15px 0; }
+          .usefulInfo section.information .panel-group .panel .panel-heading a .panel-heading-content-wrapper h4 {
+            font-family: 'Frutiger Neue LT W06 Bold';
+            font-weight: bold;
+            color: #1c1c1c; }
+    .usefulInfo section.information .panel-group .panel .panel-body {
+      border-top: none; }
 
 footer {
   padding-top: 23px;
   padding-bottom: 10px;
   background: #dbdbdb;
-  margin-bottom: 30px; }
+  margin-bottom: 55px; }
   footer .social {
     position: relative; }
     footer .social li {
@@ -384,5 +422,19 @@ footer {
     @media only screen and (min-width: 1100px) {
       footer .copyright {
         text-align: right; } }
+
+.feedbackBar {
+  display: none;
+  background: #d40511;
+  padding: 10px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%; }
+  .feedbackBar p {
+    color: #ffffff;
+    margin-bottom: 5px; }
+    .feedbackBar p strong, .feedbackBar p a {
+      font-family: 'Frutiger Neue LT W06 Bold';
+      color: #ffffff; }
 
 /*# sourceMappingURL=style.css.map */

@@ -12,5 +12,52 @@
         }
       }
     }
+    &.information {
+      .panel-group {
+        border: 1px solid #6f6f6f;
+        @include shadow('');
+        .panel{
+          background: none;
+          border: none;
+          -webkit-box-shadow: none;
+          box-shadow: none;
+          &:last-child {
+            .panel-heading {
+              a.collapsed {
+                .panel-heading-content-wrapper {
+                  border-bottom: none;
+                }
+              }
+            }
+
+          }
+
+          .panel-heading {
+            border: none;
+            background: none;
+            padding: 0px 15px;
+            a {
+              margin: 50px 0px;
+              border: none;
+
+              .panel-heading-content-wrapper{
+                border-bottom: 1px solid #c1c1c1;
+                padding: 15px 0;
+
+                h4 {
+                  font-family: 'Frutiger Neue LT W06 Bold';
+                  font-weight: bold;
+                  color: #1c1c1c;
+                }
+
+              }
+            }
+          }
+          .panel-body {
+            border-top: none ;
+          }
+        }
+      }
+    }
   }
 }
