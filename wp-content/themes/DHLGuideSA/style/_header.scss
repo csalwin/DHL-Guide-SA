@@ -218,7 +218,37 @@ body {
             }
 
             ul.navbar-nav {
+
               @include desktop {
+                .menu-item {
+                  &.open {
+                    > a {
+                      color: $dhlRed;
+                      /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&0+0,1+74,1+85 */
+                      background: -moz-linear-gradient(top,  rgba(255,255,255,0) 0%, rgba(255,255,255,1) 74%, rgba(255,255,255,1) 85%, rgba(255,255,255,1) 100%); /* FF3.6-15 */
+                      background: -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 74%,rgba(255,255,255,1) 85%,rgba(255,255,255,1) 100%); /* Chrome10-25,Safari5.1-6 */
+                      background: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 74%,rgba(255,255,255,1) 85%,rgba(255,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+
+                    }
+                    .dropdown-menu {
+                      left: 0;
+                      right: auto;
+                      top: 98%;
+                      border: none;
+                      min-width: 100%;
+
+                      ul {
+                        li {
+                          a {
+                            color: inherit;
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+
                 padding-right: 20px;
               }
 
@@ -226,7 +256,7 @@ body {
                 a {
                   color: #333333;
                 }
-                &.current-menu-item {
+                &.current-menu-item, &.current-menu-parent {
                   a {
                     font-family: 'Frutiger Neue LT W06 Bold';
                     background: none;

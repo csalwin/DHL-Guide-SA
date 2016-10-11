@@ -123,10 +123,12 @@ get_header();?>
                         $post = $post_object;
                         setup_postdata( $post );
                         ?>
-                        <div class="col-xs-12 col-md-4">
+                        <div class="col-xs-12 col-md-4 guideline">
 
                             <div class="pageWrapper">
-                                <img src="<?php echo $post_image['sizes']['large']?>" alt="<?php echo $post_image['alt']?>" title="<?php echo $post_image['title'] ?>"/>
+                                <div class="imgWrapper">
+                                    <img src="<?php echo $post_image['sizes']['large']?>" alt="<?php echo $post_image['alt']?>" title="<?php echo $post_image['title'] ?>"/>
+                                </div>
                                 <div class="textWrapper text-center">
                                     <p><?php the_title(); ?></p>
                                     <a href="<?php echo get_home_url().'/useful-information/#'.$post->post_name; ?>"><?php echo $post_link_text; ?></a>

@@ -1,6 +1,7 @@
+
+<div class="row">
 <?php if (have_posts()): while (have_posts()) : the_post(); ?>
 
-	<div class="row">
 
 	<!-- article -->
 	<article id="post-<?php the_ID(); ?>" <?php post_class('col-xs-12 col-sm-4 col-md-3'); ?>>
@@ -27,18 +28,19 @@
 
 	</article>
 	<!-- /article -->
-	</div>
 
 <?php endwhile; ?>
 
 <?php else: ?>
-	<div class="row">
+
 	<!-- article -->
 	<article>
 		<h2><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h2>
 	</article>
 	<!-- /article -->
 
-	</div>
+
 
 <?php endif; ?>
+
+</div>

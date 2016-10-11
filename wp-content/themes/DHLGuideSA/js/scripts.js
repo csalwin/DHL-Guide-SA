@@ -56,6 +56,8 @@
 
         //scroll to ID
         if(window.location.hash) {
+
+            location.hash = target;
             $('html,body').animate(
                 {
                     scrollTop: $(target).offset().top

@@ -224,10 +224,29 @@ body {
                 right: -20px; } }
             @media only screen and (min-width: 1100px) {
               body .headerContainer .header .headerWrapper .navbar .navbar-collapse ul.navbar-nav {
-                padding-right: 20px; } }
+                padding-right: 20px; }
+                body .headerContainer .header .headerWrapper .navbar .navbar-collapse ul.navbar-nav .menu-item.open > a {
+                  color: #d40511;
+                  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&0+0,1+74,1+85 */
+                  background: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 0%, white 74%, white 85%, white 100%);
+                  /* FF3.6-15 */
+                  background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, white 74%, white 85%, white 100%);
+                  /* Chrome10-25,Safari5.1-6 */
+                  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, white 74%, white 85%, white 100%);
+                  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 );
+                  /* IE6-9 */ }
+                body .headerContainer .header .headerWrapper .navbar .navbar-collapse ul.navbar-nav .menu-item.open .dropdown-menu {
+                  left: 0;
+                  right: auto;
+                  top: 98%;
+                  border: none;
+                  min-width: 100%; }
+                  body .headerContainer .header .headerWrapper .navbar .navbar-collapse ul.navbar-nav .menu-item.open .dropdown-menu ul li a {
+                    color: inherit; } }
             body .headerContainer .header .headerWrapper .navbar .navbar-collapse ul.navbar-nav li a {
               color: #333333; }
-            body .headerContainer .header .headerWrapper .navbar .navbar-collapse ul.navbar-nav li.current-menu-item a {
+            body .headerContainer .header .headerWrapper .navbar .navbar-collapse ul.navbar-nav li.current-menu-item a, body .headerContainer .header .headerWrapper .navbar .navbar-collapse ul.navbar-nav li.current-menu-parent a {
               font-family: 'Frutiger Neue LT W06 Bold';
               background: none;
               font-weight: bold; }
@@ -239,42 +258,45 @@ body {
       padding: 0; } }
   .pageHome section.headerSlider {
     padding: 0; }
-    .pageHome section.headerSlider .bx-wrapper .bx-pager {
-      position: absolute;
-      bottom: 10px; }
-      .pageHome section.headerSlider .bx-wrapper .bx-pager.bx-default-pager a {
-        background: #ffffff; }
-        .pageHome section.headerSlider .bx-wrapper .bx-pager.bx-default-pager a.active {
-          background: #d40511; }
-    .pageHome section.headerSlider .bx-wrapper .bx-viewport {
-      border: none;
-      -webkit-box-shadow: none;
-      box-shadow: none;
-      left: 0; }
-      .pageHome section.headerSlider .bx-wrapper .bx-viewport .slide-pane {
-        position: relative;
-        display: block;
-        overflow: hidden; }
-        .pageHome section.headerSlider .bx-wrapper .bx-viewport .slide-pane img {
-          width: 100%; }
-        @media only screen and (min-width: 768px) {
-          .pageHome section.headerSlider .bx-wrapper .bx-viewport .slide-pane .headerBanner {
-            max-width: 600px;
-            position: absolute;
-            text-transform: uppercase;
-            color: #ffffff;
-            top: 60%;
-            transform: translateY(-40%);
-            left: 70px; }
-            .pageHome section.headerSlider .bx-wrapper .bx-viewport .slide-pane .headerBanner h3, .pageHome section.headerSlider .bx-wrapper .bx-viewport .slide-pane .headerBanner span {
-              color: #ffffff; }
-            .pageHome section.headerSlider .bx-wrapper .bx-viewport .slide-pane .headerBanner h3 {
-              font-size: 50px;
-              font-weight: bold;
-              margin-bottom: 0; }
-            .pageHome section.headerSlider .bx-wrapper .bx-viewport .slide-pane .headerBanner span {
-              font-weight: normal;
-              font-size: 40px; } }
+    .pageHome section.headerSlider .bx-wrapper {
+      margin-bottom: 20px; }
+      .pageHome section.headerSlider .bx-wrapper .bx-pager {
+        position: absolute;
+        bottom: 10px; }
+        .pageHome section.headerSlider .bx-wrapper .bx-pager.bx-default-pager a {
+          background: #ffffff; }
+          .pageHome section.headerSlider .bx-wrapper .bx-pager.bx-default-pager a.active {
+            background: #d40511; }
+      .pageHome section.headerSlider .bx-wrapper .bx-viewport {
+        border: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        left: 0; }
+        .pageHome section.headerSlider .bx-wrapper .bx-viewport .slide-pane {
+          position: relative;
+          display: block;
+          overflow: hidden;
+          max-height: 440px; }
+          .pageHome section.headerSlider .bx-wrapper .bx-viewport .slide-pane img {
+            width: 100%; }
+          @media only screen and (min-width: 768px) {
+            .pageHome section.headerSlider .bx-wrapper .bx-viewport .slide-pane .headerBanner {
+              max-width: 600px;
+              position: absolute;
+              text-transform: uppercase;
+              color: #ffffff;
+              top: 60%;
+              transform: translateY(-40%);
+              left: 70px; }
+              .pageHome section.headerSlider .bx-wrapper .bx-viewport .slide-pane .headerBanner h3, .pageHome section.headerSlider .bx-wrapper .bx-viewport .slide-pane .headerBanner span {
+                color: #ffffff; }
+              .pageHome section.headerSlider .bx-wrapper .bx-viewport .slide-pane .headerBanner h3 {
+                font-size: 50px;
+                font-weight: bold;
+                margin-bottom: 0; }
+              .pageHome section.headerSlider .bx-wrapper .bx-viewport .slide-pane .headerBanner span {
+                font-weight: normal;
+                font-size: 40px; } }
   .pageHome section .heading {
     font-size: 36px;
     font-weight: 100; }
@@ -306,14 +328,25 @@ body {
           -webkit-box-shadow: 0px 5px 20px -2px rgba(50, 50, 50, 0.17);
           -moz-box-shadow: 0px 5px 20px -2px rgba(50, 50, 50, 0.17);
           box-shadow: 0px 5px 20px -2px rgba(50, 50, 50, 0.17); }
-  .pageHome section.guidelines .pageWrapper {
-    border: 1px solid #dbdbdb;
-    margin-bottom: 25px;
-    -webkit-box-shadow: 0px 5px 20px -2px rgba(50, 50, 50, 0.77);
-    -moz-box-shadow: 0px 5px 20px -2px rgba(50, 50, 50, 0.77);
-    box-shadow: 0px 5px 20px -2px rgba(50, 50, 50, 0.77); }
-    .pageHome section.guidelines .pageWrapper .textWrapper {
-      padding: 15px 0; }
+  .pageHome section.guidelines .guideline {
+    margin-top: 20px; }
+    .pageHome section.guidelines .guideline .pageWrapper {
+      border: 1px solid #dbdbdb;
+      margin-bottom: 25px;
+      -webkit-box-shadow: 0px 5px 20px -2px rgba(50, 50, 50, 0.77);
+      -moz-box-shadow: 0px 5px 20px -2px rgba(50, 50, 50, 0.77);
+      box-shadow: 0px 5px 20px -2px rgba(50, 50, 50, 0.77); }
+      .pageHome section.guidelines .guideline .pageWrapper .imgWrapper {
+        width: 100%;
+        max-height: 150px;
+        overflow: hidden;
+        display: block; }
+        .pageHome section.guidelines .guideline .pageWrapper .imgWrapper img {
+          display: block;
+          width: 100%;
+          min-height: 150px; }
+      .pageHome section.guidelines .guideline .pageWrapper .textWrapper {
+        padding: 15px 0; }
 
 .singleCountries section.introduction .countryFlag {
   padding: 30px; }
@@ -338,6 +371,7 @@ body {
     .singleCountries section.introduction .countryTitle {
       margin-top: 20px; } }
 .singleCountries section.countryInformation {
+  margin-top: 20px;
   border: 1px solid #6c6c6c; }
   .singleCountries section.countryInformation .yellowHeading {
     background: #ffcc00;
@@ -345,7 +379,8 @@ body {
     padding: 2px;
     margin-bottom: 5px; }
     .singleCountries section.countryInformation .yellowHeading h2 {
-      color: #d40511; }
+      color: #d40511;
+      margin: 15px 0; }
   .singleCountries section.countryInformation .informationContent {
     padding: 20px; }
 
