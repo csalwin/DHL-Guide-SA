@@ -7,7 +7,7 @@ $lightGrey : #dbdbdb;
 
 
 $tablet-width: 768px;
-$desktop-width: 1100px;
+$desktop-width: 1200px;
 
 @mixin tablet {
   @media only screen and (min-width: #{$tablet-width}) {

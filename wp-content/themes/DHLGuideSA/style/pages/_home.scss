@@ -34,27 +34,42 @@
               width: 100%;
             }
             .headerBanner {
-              @include tablet {
-                max-width: 600px;
+                max-width: 300px;
                 position: absolute;
                 text-transform: uppercase;
                 color: #ffffff;
-                top: 60%;
+                top: 40%;
                 transform: translateY(-40%);
+                left: 8%;
+              @include tablet {
                 left: 70px;
+                top: 50%;
+                max-width: 600px;
+              }
+              @include desktop {
+                top: 60%;
+              }
+
                 h3, span {
                   color: #ffffff;
                 }
                 h3 {
-                  font-size: 50px;
+                  font-size: 25px;
+                  @include tablet {
+                    font-size: 50px;
+                  }
+
                   font-weight: bold;
                   margin-bottom: 0;
                 }
                 span {
                   font-weight: normal;
-                  font-size: 40px;
+                  font-size: 15px;
+                  @include tablet {
+                    font-size: 40px;
+                  }
                 }
-              }
+
 
             }
           }

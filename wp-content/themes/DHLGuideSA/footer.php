@@ -1,4 +1,6 @@
-			<!-- footer -->
+<div class="clearfix"></div>
+
+<!-- footer -->
 			<footer class="footer container" role="contentinfo">
 				<!-- Social -->
 				<ul class="social col-xs-12 col-md-4">

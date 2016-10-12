@@ -23,7 +23,6 @@ body {
       margin-top: 20px;
       padding-left: 35px;
       padding-right: 35px;
-      margin-bottom: -150px;
     }
 
     .header {
@@ -35,15 +34,18 @@ body {
         z-index: 2;
         display: block;
         padding-top: 30px;
-        padding-bottom: 80px;
         width: 100%;
-        background: -moz-linear-gradient(top, rgba(255, 204, 0, 1) 0%, rgba(255, 204, 0, 1) 65%, rgba(255, 204, 0, 0) 100%); /* FF3.6-15 */
-        background: -webkit-linear-gradient(top, rgba(255, 204, 0, 1) 0%, rgba(255, 204, 0, 1) 65%, rgba(255, 204, 0, 0) 100%); /* Chrome10-25,Safari5.1-6 */
-        background: linear-gradient(to bottom, #ffcc00 0%, #ffcc00 65%, rgba(255, 204, 0, 0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffcc00', endColorstr='#00ffcc00', GradientType=0); /* IE6-9 */
+        background: $dhlYellow;
+
         @include tablet {
           padding-top: 10px;
           padding-bottom: 10px;
+        }
+        @include desktop {
+          background: -moz-linear-gradient(top, rgba(255, 204, 0, 1) 0%, rgba(255, 204, 0, 1) 65%, rgba(255, 204, 0, 0) 100%); /* FF3.6-15 */
+          background: -webkit-linear-gradient(top, rgba(255, 204, 0, 1) 0%, rgba(255, 204, 0, 1) 65%, rgba(255, 204, 0, 0) 100%); /* Chrome10-25,Safari5.1-6 */
+          background: linear-gradient(to bottom, #ffcc00 0%, #ffcc00 65%, rgba(255, 204, 0, 0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+          filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffcc00', endColorstr='#00ffcc00', GradientType=0); /* IE6-9 */
         }
         .navbar {
           background: none;
@@ -91,7 +93,7 @@ body {
             right: -310px;
             transition: transform .3s;
             width: 280px;
-            background: #e7e7e7;
+            background: none;
             height: 8000px !important;
             &.showsidebar {
               display: block;
@@ -102,7 +104,6 @@ body {
               width: auto;
               height: inherit !important;
               transform: none;
-              background: none;
               right: auto;
               top: auto;
             }
@@ -127,10 +128,10 @@ body {
                     height: 100%;
                     top: 0;
                     right: 0;
-                    padding: 4px 0 0 0;
+                    padding: 4px 0 0 5px;
                     font-size: 20px;
                     border: none;
-                    background: #e7e7e7;
+                    background: #f7f8f6;
                     &:focus {
                       border: none;
                       outline: none;
@@ -248,7 +249,6 @@ body {
                     }
                   }
                 }
-
                 padding-right: 20px;
               }
 
@@ -268,6 +268,12 @@ body {
           }
         }
       }
+    }
+  }
+  .content {
+    @include desktop {
+      position: relative;
+      top: -150px;
     }
   }
 }

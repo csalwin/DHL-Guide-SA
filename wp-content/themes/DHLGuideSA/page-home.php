@@ -44,14 +44,6 @@ get_header();?>
 
             ?>
 
-<!--            <div class="slide-pane">-->
-<!--                <img src="--><?php //echo get_template_directory_uri()?><!--/img/homepage/slider1.jpg"/>-->
-<!--                <div class="headerBanner">-->
-<!--                    <h3>Buying a Wedding Dress From China?</h3>-->
-<!--                    <span>Read here first!</span>-->
-<!--                </div>-->
-<!--            </div>-->
-
         </div>
     </section>
     <section class="row countriesBar">
@@ -93,9 +85,6 @@ get_header();?>
 
             endif;
             ?>
-<!--            <div class="countryWrapper col-xs-6 col-md-3">-->
-<!--                <a href="#"><img src="--><?php //echo get_template_directory_uri()?><!--/img/homepage/canada.jpg"/></a>-->
-<!--            </div>-->
         </div>
     </section>
     <hr/>
@@ -147,23 +136,6 @@ get_header();?>
 
             endif;
             ?>
-
-
-
-<!--            <div class="col-xs-12 col-md-4">-->
-<!---->
-<!--                <div class="pageWrapper">-->
-<!--                    <img src="--><?php //echo get_template_directory_uri()?><!--/img/homepage/airPlane_page.jpg" />-->
-<!--                    <div class="textWrapper text-center">-->
-<!--                        <p>Importing clothing samples into the country?</p>-->
-<!--                        <a href="#">View all regulations</a>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!---->
-<!--            </div>-->
-
-
-
         </div>
     </section>
 </div>
