@@ -7,7 +7,6 @@
 		<link href="//www.google-analytics.com" rel="dns-prefetch">
         <link href="<?php echo get_template_directory_uri(); ?>/img/icons/favicon.ico" rel="shortcut icon">
         <link href="<?php echo get_template_directory_uri(); ?>/img/icons/touch.png" rel="apple-touch-icon-precomposed">
-
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="description" content="<?php bloginfo('description'); ?>">
@@ -36,12 +35,11 @@
 					<nav class="navbar navbar-default" role="navigation">
 						<div class="navbar-header">
 							<!--								<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">-->
-							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
-
+							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
 								<span class="sr-only">Toggle navigation</span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
+								<span class="icon-bar left"></span>
+								<span class="icon-bar transparent"></span>
+								<span class="icon-bar right"></span>
 							</button>
 							<a class="navbar-brand" href="<?php echo home_url(); ?>">
 								<img src="<?php echo get_template_directory_uri(); ?>/img/DHL_Logo.png" title="DHL Logo"/>

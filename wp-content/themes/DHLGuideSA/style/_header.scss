@@ -20,7 +20,6 @@ body {
     position: relative;
 
     @include desktop {
-      margin-top: 20px;
       padding-left: 35px;
       padding-right: 35px;
     }
@@ -29,6 +28,12 @@ body {
       position: relative;
       display: block;
       width: 100%;
+      @include desktop {
+        position: absolute;
+        display: block;
+        width: 94%;
+        margin-top: 20px;
+      }
       .headerWrapper {
         padding: 20px;
         z-index: 2;
@@ -58,21 +63,94 @@ body {
           @include desktop {
             padding-top: 0;
           }
-
           .navbar-toggle {
-            &.sidebar {
-              position: relative;
-              right: 0;
-              top: 0;
-              z-index: 1;
-              .icon-bar {
-                height: 22px;
-                width: 2px;
-                float: left;
-                position: relative;
-                margin: 0 2px;
+            background: $dhlRed;
+            border: none;
+            left: 25px;
+            span.icon-bar {
+              background-color: #ffffff;
+              height: 22px;
+              width: 2px;
+              float: left;
+              margin: 0 2px;
+              transition: transform .3s, background-color .3s;
+
+              &.transparent {
+                display: none;
               }
+              &.left {
+                position: relative;
+                left: 25%;
+                -webkit-transform: rotate(45deg);
+                transform: rotate(45deg);
+              }
+              &.right {
+                position: relative;
+                 right: 25%;
+                -webkit-transform: rotate(-45deg);
+                transform: rotate(-45deg);
+              }
+
             }
+
+            &.collapsed {
+              background: none;
+              border: none;
+              left: 0;
+              span.icon-bar {
+                background-color: #888;
+                width: 22px;
+                height: 2px;
+                float: none;
+                margin: 4px 0;
+                transition: transform .3s, background-color .3s;
+                &.transparent {
+                  display: block;
+                }
+                &.left {
+                  position: relative;
+                  left: 0;
+                  -webkit-transform: none;
+                  transform: none;
+                }
+                &.right {
+                  position: relative;
+                  right: 0;
+                  -webkit-transform: none;
+                  transform: none;
+                }
+              }
+
+            }
+            //&.sidebar {
+            //  position: absolute;
+            //  right: 0;
+            //  top: 0;
+            //  z-index: 1;
+            //  border: none;
+            //  .icon-bar {
+            //    height: 22px;
+            //    width: 2px;
+            //    float: left;
+            //    position: relative;
+            //    margin: 0 2px;
+            //    &.transparent {
+            //      display: none;
+            //    }
+            //    &.left {
+            //      position: relative;
+            //      left: 25%;
+            //      -webkit-transform: rotate(45deg);
+            //      transform: rotate(45deg);
+            //    }
+            //    &.right {
+            //      position: relative;
+            //      right: 25%;
+            //      -webkit-transform: rotate(-45deg);
+            //      transform: rotate(-45deg);
+            //    }
+            //  }
+            //}
           }
           .navbar-header {
 
@@ -108,6 +186,9 @@ body {
               top: auto;
             }
             .searchFormContainer {
+              padding-bottom: 10px;
+              border-bottom: 1px solid #ebebeb;
+
               form.search {
                 @include desktop {
                   float: right;
@@ -261,6 +342,10 @@ body {
                     font-family: 'Frutiger Neue LT W06 Bold';
                     background: none;
                     font-weight: bold;
+                    color: $dhlRed;
+                    @include desktop {
+                      color: #333333;
+                    }
                   }
                 }
               }
@@ -271,9 +356,9 @@ body {
     }
   }
   .content {
-    @include desktop {
-      position: relative;
-      top: -150px;
-    }
+    //@include desktop {
+    //  position: relative;
+    //  top: -150px;
+    //}
   }
 }

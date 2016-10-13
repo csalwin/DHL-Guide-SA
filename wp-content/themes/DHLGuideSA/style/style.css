@@ -69,13 +69,18 @@ body {
     position: relative; }
     @media only screen and (min-width: 1200px) {
       body .headerContainer {
-        margin-top: 20px;
         padding-left: 35px;
         padding-right: 35px; } }
     body .headerContainer .header {
       position: relative;
       display: block;
       width: 100%; }
+      @media only screen and (min-width: 1200px) {
+        body .headerContainer .header {
+          position: absolute;
+          display: block;
+          width: 94%;
+          margin-top: 20px; } }
       body .headerContainer .header .headerWrapper {
         padding: 20px;
         z-index: 2;
@@ -108,17 +113,52 @@ body {
           @media only screen and (min-width: 1200px) {
             body .headerContainer .header .headerWrapper .navbar {
               padding-top: 0; } }
-          body .headerContainer .header .headerWrapper .navbar .navbar-toggle.sidebar {
-            position: relative;
-            right: 0;
-            top: 0;
-            z-index: 1; }
-            body .headerContainer .header .headerWrapper .navbar .navbar-toggle.sidebar .icon-bar {
+          body .headerContainer .header .headerWrapper .navbar .navbar-toggle {
+            background: #d40511;
+            border: none;
+            left: 25px; }
+            body .headerContainer .header .headerWrapper .navbar .navbar-toggle span.icon-bar {
+              background-color: #ffffff;
               height: 22px;
               width: 2px;
               float: left;
-              position: relative;
-              margin: 0 2px; }
+              margin: 0 2px;
+              transition: transform .3s, background-color .3s; }
+              body .headerContainer .header .headerWrapper .navbar .navbar-toggle span.icon-bar.transparent {
+                display: none; }
+              body .headerContainer .header .headerWrapper .navbar .navbar-toggle span.icon-bar.left {
+                position: relative;
+                left: 25%;
+                -webkit-transform: rotate(45deg);
+                transform: rotate(45deg); }
+              body .headerContainer .header .headerWrapper .navbar .navbar-toggle span.icon-bar.right {
+                position: relative;
+                right: 25%;
+                -webkit-transform: rotate(-45deg);
+                transform: rotate(-45deg); }
+            body .headerContainer .header .headerWrapper .navbar .navbar-toggle.collapsed {
+              background: none;
+              border: none;
+              left: 0; }
+              body .headerContainer .header .headerWrapper .navbar .navbar-toggle.collapsed span.icon-bar {
+                background-color: #888;
+                width: 22px;
+                height: 2px;
+                float: none;
+                margin: 4px 0;
+                transition: transform .3s, background-color .3s; }
+                body .headerContainer .header .headerWrapper .navbar .navbar-toggle.collapsed span.icon-bar.transparent {
+                  display: block; }
+                body .headerContainer .header .headerWrapper .navbar .navbar-toggle.collapsed span.icon-bar.left {
+                  position: relative;
+                  left: 0;
+                  -webkit-transform: none;
+                  transform: none; }
+                body .headerContainer .header .headerWrapper .navbar .navbar-toggle.collapsed span.icon-bar.right {
+                  position: relative;
+                  right: 0;
+                  -webkit-transform: none;
+                  transform: none; }
           body .headerContainer .header .headerWrapper .navbar .navbar-header .navbar-brand img {
             width: 220px;
             display: block;
@@ -144,84 +184,87 @@ body {
                 transform: none;
                 right: auto;
                 top: auto; } }
-            @media only screen and (min-width: 1200px) {
-              body .headerContainer .header .headerWrapper .navbar .navbar-collapse .searchFormContainer form.search {
-                float: right; } }
-            body .headerContainer .header .headerWrapper .navbar .navbar-collapse .searchFormContainer form.search #headerSearchForm {
-              position: relative; }
-              body .headerContainer .header .headerWrapper .navbar .navbar-collapse .searchFormContainer form.search #headerSearchForm input {
-                width: 100%;
-                padding: 10px 40px 10px 3px;
-                border: none; }
-                body .headerContainer .header .headerWrapper .navbar .navbar-collapse .searchFormContainer form.search #headerSearchForm input:focus {
-                  border: none;
-                  outline: none; }
-              body .headerContainer .header .headerWrapper .navbar .navbar-collapse .searchFormContainer form.search #headerSearchForm button, body .headerContainer .header .headerWrapper .navbar .navbar-collapse .searchFormContainer form.search #headerSearchForm .showSearch {
-                position: absolute;
-                height: 100%;
-                top: 0;
-                right: 0;
-                padding: 4px 0 0 5px;
-                font-size: 20px;
-                border: none;
-                background: #f7f8f6; }
-                body .headerContainer .header .headerWrapper .navbar .navbar-collapse .searchFormContainer form.search #headerSearchForm button:focus, body .headerContainer .header .headerWrapper .navbar .navbar-collapse .searchFormContainer form.search #headerSearchForm .showSearch:focus {
-                  border: none;
-                  outline: none; }
-              body .headerContainer .header .headerWrapper .navbar .navbar-collapse .searchFormContainer form.search #headerSearchForm #formComponents {
-                display: block; }
-              body .headerContainer .header .headerWrapper .navbar .navbar-collapse .searchFormContainer form.search #headerSearchForm button span, body .headerContainer .header .headerWrapper .navbar .navbar-collapse .searchFormContainer form.search #headerSearchForm .showSearch {
-                color: #d40511; }
-              body .headerContainer .header .headerWrapper .navbar .navbar-collapse .searchFormContainer form.search #headerSearchForm .showSearch {
-                display: none; }
-              @media only screen and (min-width: 768px) {
-                body .headerContainer .header .headerWrapper .navbar .navbar-collapse .searchFormContainer form.search #headerSearchForm {
-                  position: absolute;
-                  right: 15px;
-                  top: -10px; }
-                  body .headerContainer .header .headerWrapper .navbar .navbar-collapse .searchFormContainer form.search #headerSearchForm input {
-                    padding: 5px 40px 5px 3px; }
-                  body .headerContainer .header .headerWrapper .navbar .navbar-collapse .searchFormContainer form.search #headerSearchForm button, body .headerContainer .header .headerWrapper .navbar .navbar-collapse .searchFormContainer form.search #headerSearchForm .showSearch {
-                    background: #ffcc00;
-                    padding: 3px 5px; } }
+            body .headerContainer .header .headerWrapper .navbar .navbar-collapse .searchFormContainer {
+              padding-bottom: 10px;
+              border-bottom: 1px solid #ebebeb; }
               @media only screen and (min-width: 1200px) {
-                body .headerContainer .header .headerWrapper .navbar .navbar-collapse .searchFormContainer form.search #headerSearchForm {
-                  position: relative;
-                  float: right; }
-                  body .headerContainer .header .headerWrapper .navbar .navbar-collapse .searchFormContainer form.search #headerSearchForm input {
-                    display: none; }
-                  body .headerContainer .header .headerWrapper .navbar .navbar-collapse .searchFormContainer form.search #headerSearchForm button span, body .headerContainer .header .headerWrapper .navbar .navbar-collapse .searchFormContainer form.search #headerSearchForm .showSearch {
-                    position: relative;
-                    top: 0; }
-                  body .headerContainer .header .headerWrapper .navbar .navbar-collapse .searchFormContainer form.search #headerSearchForm .showSearch {
-                    display: block; }
-                    body .headerContainer .header .headerWrapper .navbar .navbar-collapse .searchFormContainer form.search #headerSearchForm .showSearch.active {
-                      background: #d40511;
-                      color: #ffcc00; }
-                  body .headerContainer .header .headerWrapper .navbar .navbar-collapse .searchFormContainer form.search #headerSearchForm #formComponents {
-                    display: none;
+                body .headerContainer .header .headerWrapper .navbar .navbar-collapse .searchFormContainer form.search {
+                  float: right; } }
+              body .headerContainer .header .headerWrapper .navbar .navbar-collapse .searchFormContainer form.search #headerSearchForm {
+                position: relative; }
+                body .headerContainer .header .headerWrapper .navbar .navbar-collapse .searchFormContainer form.search #headerSearchForm input {
+                  width: 100%;
+                  padding: 10px 40px 10px 3px;
+                  border: none; }
+                  body .headerContainer .header .headerWrapper .navbar .navbar-collapse .searchFormContainer form.search #headerSearchForm input:focus {
+                    border: none;
+                    outline: none; }
+                body .headerContainer .header .headerWrapper .navbar .navbar-collapse .searchFormContainer form.search #headerSearchForm button, body .headerContainer .header .headerWrapper .navbar .navbar-collapse .searchFormContainer form.search #headerSearchForm .showSearch {
+                  position: absolute;
+                  height: 100%;
+                  top: 0;
+                  right: 0;
+                  padding: 4px 0 0 5px;
+                  font-size: 20px;
+                  border: none;
+                  background: #f7f8f6; }
+                  body .headerContainer .header .headerWrapper .navbar .navbar-collapse .searchFormContainer form.search #headerSearchForm button:focus, body .headerContainer .header .headerWrapper .navbar .navbar-collapse .searchFormContainer form.search #headerSearchForm .showSearch:focus {
+                    border: none;
+                    outline: none; }
+                body .headerContainer .header .headerWrapper .navbar .navbar-collapse .searchFormContainer form.search #headerSearchForm #formComponents {
+                  display: block; }
+                body .headerContainer .header .headerWrapper .navbar .navbar-collapse .searchFormContainer form.search #headerSearchForm button span, body .headerContainer .header .headerWrapper .navbar .navbar-collapse .searchFormContainer form.search #headerSearchForm .showSearch {
+                  color: #d40511; }
+                body .headerContainer .header .headerWrapper .navbar .navbar-collapse .searchFormContainer form.search #headerSearchForm .showSearch {
+                  display: none; }
+                @media only screen and (min-width: 768px) {
+                  body .headerContainer .header .headerWrapper .navbar .navbar-collapse .searchFormContainer form.search #headerSearchForm {
                     position: absolute;
-                    top: 30px;
-                    height: 32px;
-                    overflow: hidden;
-                    right: 0;
-                    width: 251px; }
-                    body .headerContainer .header .headerWrapper .navbar .navbar-collapse .searchFormContainer form.search #headerSearchForm #formComponents input, body .headerContainer .header .headerWrapper .navbar .navbar-collapse .searchFormContainer form.search #headerSearchForm #formComponents button {
-                      display: block;
+                    right: 15px;
+                    top: -10px; }
+                    body .headerContainer .header .headerWrapper .navbar .navbar-collapse .searchFormContainer form.search #headerSearchForm input {
+                      padding: 5px 40px 5px 3px; }
+                    body .headerContainer .header .headerWrapper .navbar .navbar-collapse .searchFormContainer form.search #headerSearchForm button, body .headerContainer .header .headerWrapper .navbar .navbar-collapse .searchFormContainer form.search #headerSearchForm .showSearch {
+                      background: #ffcc00;
+                      padding: 3px 5px; } }
+                @media only screen and (min-width: 1200px) {
+                  body .headerContainer .header .headerWrapper .navbar .navbar-collapse .searchFormContainer form.search #headerSearchForm {
+                    position: relative;
+                    float: right; }
+                    body .headerContainer .header .headerWrapper .navbar .navbar-collapse .searchFormContainer form.search #headerSearchForm input {
+                      display: none; }
+                    body .headerContainer .header .headerWrapper .navbar .navbar-collapse .searchFormContainer form.search #headerSearchForm button span, body .headerContainer .header .headerWrapper .navbar .navbar-collapse .searchFormContainer form.search #headerSearchForm .showSearch {
+                      position: relative;
+                      top: 0; }
+                    body .headerContainer .header .headerWrapper .navbar .navbar-collapse .searchFormContainer form.search #headerSearchForm .showSearch {
+                      display: block; }
+                      body .headerContainer .header .headerWrapper .navbar .navbar-collapse .searchFormContainer form.search #headerSearchForm .showSearch.active {
+                        background: #d40511;
+                        color: #ffcc00; }
+                    body .headerContainer .header .headerWrapper .navbar .navbar-collapse .searchFormContainer form.search #headerSearchForm #formComponents {
+                      display: none;
                       position: absolute;
-                      right: 0; }
-                    body .headerContainer .header .headerWrapper .navbar .navbar-collapse .searchFormContainer form.search #headerSearchForm #formComponents button {
-                      background: none; }
-                  body .headerContainer .header .headerWrapper .navbar .navbar-collapse .searchFormContainer form.search #headerSearchForm input {
-                    width: 250px;
-                    right: 0; } }
-            @media only screen and (min-width: 1200px) {
-              body .headerContainer .header .headerWrapper .navbar .navbar-collapse .searchFormContainer {
-                position: relative;
-                display: block;
-                float: right;
-                top: 20px;
-                right: -20px; } }
+                      top: 30px;
+                      height: 32px;
+                      overflow: hidden;
+                      right: 0;
+                      width: 251px; }
+                      body .headerContainer .header .headerWrapper .navbar .navbar-collapse .searchFormContainer form.search #headerSearchForm #formComponents input, body .headerContainer .header .headerWrapper .navbar .navbar-collapse .searchFormContainer form.search #headerSearchForm #formComponents button {
+                        display: block;
+                        position: absolute;
+                        right: 0; }
+                      body .headerContainer .header .headerWrapper .navbar .navbar-collapse .searchFormContainer form.search #headerSearchForm #formComponents button {
+                        background: none; }
+                    body .headerContainer .header .headerWrapper .navbar .navbar-collapse .searchFormContainer form.search #headerSearchForm input {
+                      width: 250px;
+                      right: 0; } }
+              @media only screen and (min-width: 1200px) {
+                body .headerContainer .header .headerWrapper .navbar .navbar-collapse .searchFormContainer {
+                  position: relative;
+                  display: block;
+                  float: right;
+                  top: 20px;
+                  right: -20px; } }
             @media only screen and (min-width: 1200px) {
               body .headerContainer .header .headerWrapper .navbar .navbar-collapse ul.navbar-nav {
                 padding-right: 20px; }
@@ -249,11 +292,11 @@ body {
             body .headerContainer .header .headerWrapper .navbar .navbar-collapse ul.navbar-nav li.current-menu-item a, body .headerContainer .header .headerWrapper .navbar .navbar-collapse ul.navbar-nav li.current-menu-parent a {
               font-family: 'Frutiger Neue LT W06 Bold';
               background: none;
-              font-weight: bold; }
-  @media only screen and (min-width: 1200px) {
-    body .content {
-      position: relative;
-      top: -150px; } }
+              font-weight: bold;
+              color: #d40511; }
+              @media only screen and (min-width: 1200px) {
+                body .headerContainer .header .headerWrapper .navbar .navbar-collapse ul.navbar-nav li.current-menu-item a, body .headerContainer .header .headerWrapper .navbar .navbar-collapse ul.navbar-nav li.current-menu-parent a {
+                  color: #333333; } }
 
 .pageHome section {
   padding: 0 15px; }
@@ -439,6 +482,7 @@ body {
       border-top: none; }
 
 footer {
+  position: relative;
   padding-top: 23px;
   padding-bottom: 10px;
   background: #dbdbdb;
@@ -488,5 +532,59 @@ footer {
     .feedbackBar p strong, .feedbackBar p a {
       font-family: 'Frutiger Neue LT W06 Bold';
       color: #ffffff; }
+
+.modal {
+  background-color: rgba(0, 0, 0, 0.7); }
+  .modal .modal-content {
+    padding: 10px; }
+    .modal .modal-content .modal-title {
+      font-size: 25px; }
+    .modal .modal-content button.close {
+      color: #222222;
+      border: 1px solid #333333;
+      border-radius: 100%;
+      opacity: .8; }
+      .modal .modal-content button.close span {
+        padding: 4px;
+        font-size: 17px;
+        position: relative;
+        top: -2px; }
+    .modal .modal-content form input[type="text"], .modal .modal-content form textarea, .modal .modal-content form input[type="email"] {
+      border: 1px solid #e0e0e0;
+      background: #f6f6f6; }
+    .modal .modal-content form input, .modal .modal-content form label, .modal .modal-content form textarea {
+      width: 100%; }
+    .modal .modal-content form input[type="submit"] {
+      width: 100px;
+      float: right;
+      /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#d40511+0,b00e01+100 */
+      background: #d40511;
+      /* Old browsers */
+      background: -moz-linear-gradient(top, #d40511 0%, #b00e01 100%);
+      /* FF3.6-15 */
+      background: -webkit-linear-gradient(top, #d40511 0%, #b00e01 100%);
+      /* Chrome10-25,Safari5.1-6 */
+      background: linear-gradient(to bottom, #d40511 0%, #b00e01 100%);
+      /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d40511', endColorstr='#b00e01',GradientType=0 );
+      /* IE6-9 */
+      -webkit-box-shadow: 0px 2px 9px 0px rgba(50, 50, 50, 0.45);
+      -moz-box-shadow: 0px 2px 9px 0px rgba(50, 50, 50, 0.45);
+      box-shadow: 0px 2px 9px 0px rgba(50, 50, 50, 0.45);
+      border-radius: 0; }
+      .modal .modal-content form input[type="submit"]:hover {
+        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#bf0508+0,660101+100 */
+        background: #bf0508;
+        /* Old browsers */
+        background: -moz-linear-gradient(top, #bf0508 0%, #660101 100%);
+        /* FF3.6-15 */
+        background: -webkit-linear-gradient(top, #bf0508 0%, #660101 100%);
+        /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom, #bf0508 0%, #660101 100%);
+        /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bf0508', endColorstr='#660101',GradientType=0 );
+        /* IE6-9 */ }
+    .modal .modal-content form img {
+      width: auto; }
 
 /*# sourceMappingURL=style.css.map */

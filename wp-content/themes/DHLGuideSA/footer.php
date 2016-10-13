@@ -43,45 +43,15 @@
 				<div class="modal-dialog" role="document">
 					<div class="modal-content">
 						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&#10005;</span></button>
 							<h4 class="modal-title" id="myModalLabel">Leave your feedback</h4>
 						</div>
 						<div class="modal-body">
-							<form>
-								<label>Name*</label><br/>
-								<input type="text"><br/>
-								<label>Email*</label><br/>
-								<input type="text"><br/>
-								<label>Comment*</label><br/>
-								<textarea></textarea><br/>
-
-							</form>
-						</div>
-						<div class="modal-footer">
-							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-							<button type="button" class="btn btn-primary">Save changes</button>
+							<?php echo do_shortcode('[contact-form-7 id="44" title="Feedback Form"]') ?>
 						</div>
 					</div>
 				</div>
 			</div>
-
-<!--			<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">-->
-<!--				<div class="modal-dialog" role="document">-->
-<!--					<div class="modal-content">-->
-<!--						<div class="modal-header">-->
-<!--							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>-->
-<!--							<h4 class="modal-title" id="myModalLabel">Leave your feedback</h4>-->
-<!--						</div>-->
-<!--						<div class="modal-body">-->
-<!--							--><?php //echo do_shortcode('[contact-form-7 id="44" title="Feedback Form"]') ?>
-<!--						</div>-->
-<!--						<div class="modal-footer">-->
-<!--							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
-<!--							<button type="button" class="btn btn-primary">Save changes</button>-->
-<!--						</div>-->
-<!--					</div>-->
-<!--				</div>-->
-<!--			</div>-->
 
 
 

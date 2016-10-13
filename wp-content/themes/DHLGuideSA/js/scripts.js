@@ -5,7 +5,7 @@
 		'use strict';
 
 		// Nav bar JS
-		$('ul.navbar-nav').before('<button type="button" class="navbar-toggle sidebar"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar transparent"></span><span class="icon-bar"></span></button>');
+		// $('ul.navbar-nav').before('<button type="button" class="navbar-toggle sidebar"><span class="sr-only">Toggle navigation</span><span class="icon-bar left"></span><span class="icon-bar transparent"></span><span class="icon-bar right"></span></button>');
 
 
 		$('.navbar-toggle').click(function (){
@@ -23,7 +23,12 @@
 
 
 		//Slider
-		$('.bxslider').bxSlider();
+		$('.bxslider').bxSlider(
+            {
+                auto: true,
+                controls: false
+            }
+        );
 
 
         //Search Bar js for desktop
@@ -42,32 +47,22 @@
         $(window).scroll(function() {
 
                 if ($(window).scrollTop() + $(window).height() > $(document).height() - 100) {
-
                         $('.feedbackBar').slideDown();
-
                 } else {
-
                         $('.feedbackBar').slideUp();
-
                 }
 
         });
 
+        if(location.hash != null && location.hash != ""){
+            var url = document.location.toString();
+            var urlSplit = $('#'+url.split('#')[1]);
+            if ( url.match('#') ) {
+                urlSplit.addClass('in');
+                var cPanelHeading = urlSplit.prev();
+                cPanelHeading.find( ".panel-title a" ).removeClass('collapsed');
+            }
 
-        //scroll to ID
-        if(window.location.hash) {
-
-            location.hash = target;
-            $('html,body').animate(
-                {
-                    scrollTop: $(target).offset().top
-                },2000,function()
-                {
-                    location.hash = target;
-                });
-
-        } else {
-            // Fragment doesn't exist
         }
 
 	});

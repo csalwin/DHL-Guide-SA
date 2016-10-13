@@ -25,7 +25,7 @@ get_header();?>
                     ?>
                     <div class="slide-pane">
                         <a href="<?php echo $slide_link ?>">
-                            <img src="<?php echo $slide_image["url"]?>" alt="<?php echo $slide_image['alt']?>" title="<?php echo $slide_image['title'] ?>"/>
+                            <img src="<?php echo $slide_image["url"]?>" alt="<?php echo $slide_image['alt']?>" title="Slider Image" onmouseover="this.title='';"/>
                             <div class="headerBanner">
                                 <h3><?php echo $slide_title; ?></h3>
                                 <span><?php echo $slide_CTA; ?> </span>
