@@ -153,6 +153,9 @@ body {
             //}
           }
           .navbar-header {
+            display: block;
+            z-index: 3;
+            position: relative;
 
             .navbar-brand {
               img {

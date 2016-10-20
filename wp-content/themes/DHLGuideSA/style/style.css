@@ -163,10 +163,14 @@ body {
                   right: 0;
                   -webkit-transform: none;
                   transform: none; }
-          body .headerContainer .header .headerWrapper .navbar .navbar-header .navbar-brand img {
-            width: 220px;
+          body .headerContainer .header .headerWrapper .navbar .navbar-header {
             display: block;
-            margin: 0 auto; }
+            z-index: 3;
+            position: relative; }
+            body .headerContainer .header .headerWrapper .navbar .navbar-header .navbar-brand img {
+              width: 220px;
+              display: block;
+              margin: 0 auto; }
           body .headerContainer .header .headerWrapper .navbar .navbar-collapse {
             display: none;
             position: absolute;

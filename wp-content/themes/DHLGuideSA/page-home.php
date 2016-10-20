@@ -91,7 +91,7 @@ get_header();?>
     <section class="row guidelines">
         <div class="text-center">
             <h1 class="fsf heading">South Africa Import and Export Guidelines</h1>
-            <p class="headingTagLine">Import and Export regulations change all the time. Make sure your're a step ahead with our <a href="#">Shipping Guidelines</a></p>
+            <p class="headingTagLine">Import and Export regulations change all the time. Make sure you're a step ahead with our <a href="#">Shipping Guidelines</a></p>
         </div>
 
         <div class="row">
@@ -105,6 +105,7 @@ get_header();?>
                     $post_object = get_sub_field('guideline');
                     $post_image = get_sub_field('guideline_image');
                     $post_link_text = get_sub_field('guideline_button_text');
+                    $page = get_sub_field('page');
 
                     if( $post_object ):
 
@@ -116,11 +117,11 @@ get_header();?>
 
                             <div class="pageWrapper">
                                 <div class="imgWrapper">
-                                    <img src="<?php echo $post_image['sizes']['large']?>" alt="<?php echo $post_image['alt']?>" title="<?php echo $post_image['title'] ?>"/>
+                                    <a href="<?php echo get_sub_field('page').'#'.$post->post_name; ?>"><img src="<?php echo $post_image['sizes']['large']?>" alt="<?php echo $post_image['alt']?>" title="<?php echo $post_image['title'] ?>"/></a>
                                 </div>
                                 <div class="textWrapper text-center">
                                     <p><?php the_title(); ?></p>
-                                    <a href="<?php echo get_home_url().'/useful-information/#'.$post->post_name; ?>"><?php echo $post_link_text; ?></a>
+                                    <a href="<?php echo get_sub_field('page').'#'.$post->post_name; ?>"><?php echo $post_link_text; ?></a>
                                 </div>
                             </div>
 

@@ -30,7 +30,6 @@
             }
         );
 
-
         //Search Bar js for desktop
         $('.showSearch').click(function () {
             $(this).toggleClass('active');
@@ -38,6 +37,14 @@
 
         });
 
+        $(".panel-collapse").on("shown.bs.collapse", function () {
+            var selected = $(this);
+            var collapseh = $(".collapse .in").height();
+            $('html, body').animate({
+                scrollTop: selected.offset().top - 50
+            }, 500);
+
+        });
 
        // FeedbackBar
 
@@ -59,6 +66,9 @@
             var urlSplit = $('#'+url.split('#')[1]);
             if ( url.match('#') ) {
                 urlSplit.addClass('in');
+                $('html, body').animate({
+                    scrollTop: urlSplit.offset().top - 50
+                }, 500);
                 var cPanelHeading = urlSplit.prev();
                 cPanelHeading.find( ".panel-title a" ).removeClass('collapsed');
             }
@@ -69,6 +79,14 @@
 
     //TODO add this to the line to check if its already shown
     // if ($('.feedbackBar').offsetParent === null) {
+
+
+
+
+
+
+
+
 
 
 

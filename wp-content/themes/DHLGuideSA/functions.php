@@ -608,6 +608,11 @@ function html5_shortcode_demo_2($atts, $content = null) // Demo Heading H2 short
 }
 
 
+
+
+
+
+
 /**
  * Generate custom search form
  *
@@ -669,6 +674,82 @@ add_filter('posts_where','atom_search_where');
 add_filter('posts_join', 'atom_search_join');
 add_filter('posts_groupby', 'atom_search_groupby');
 
+
+
+
+
+
+
+// Set options to show and hide feedback form
+add_action( 'admin_menu', 'dhlguidesa_add_admin_menu' );
+add_action( 'admin_init', 'dhlguidesa_settings_init' );
+
+function dhlguidesa_add_admin_menu(  ) {
+    add_options_page( 'Feedback Form', 'Feedback Form', 'manage_options', 'dhlguidesa', 'dhlguidesa_options_page' );
+
+}
+
+function dhlguidesa_settings_init(  ) {
+    register_setting( 'pluginPage', 'dhlguidesa_feedbackform' );
+
+    add_settings_section(
+        'dhlguidesa_pluginPage_section',
+        __( 'Section to show or hide the feedback form', 'wordpress' ),
+        'dhlguidesa_settings_section_callback',
+        'pluginPage'
+    );
+    add_settings_field(
+        'dhlguidesa_feedback_checkbox',
+        __( 'Show feedback form', 'wordpress' ),
+        'dhlguidesa_feedback_checkbox_render',
+        'pluginPage',
+        'dhlguidesa_pluginPage_section'
+    );
+    add_settings_field(
+        'dhlguidesa_feedback_shortcode',
+        __( 'Contact form shortcode', 'wordpress' ),
+        'dhlguidesa_feedback_shortcode_render',
+        'pluginPage',
+        'dhlguidesa_pluginPage_section'
+    );
+}
+
+
+function dhlguidesa_feedback_checkbox_render(  ) {
+    $options = get_option( 'dhlguidesa_feedbackform' );
+    ?>
+    <input type='checkbox' name='dhlguidesa_feedbackform[dhlguidesa_feedback_checkbox]' <?php checked( $options['dhlguidesa_feedback_checkbox'], 1 ); ?> value='1'>
+    <?php
+
+}
+
+function dhlguidesa_feedback_shortcode_render(  ) {
+    $options = get_option( 'dhlguidesa_feedbackform' );
+    ?>
+    <input type='text' name='dhlguidesa_feedbackform[dhlguidesa_feedback_shortcode]' value='<?php echo $options['dhlguidesa_feedback_shortcode']; ?>'>
+    <?php
+
+}
+
+function dhlguidesa_settings_section_callback(  ) {
+
+    echo __( 'Feedback form settings', 'wordpress' );
+
+}
+
+function dhlguidesa_options_page(  ) {
+
+    ?>
+    <form action='options.php' method='post'>
+        <h2>Feedback Form</h2>
+        <?php
+        settings_fields( 'pluginPage' );
+        do_settings_sections( 'pluginPage' );
+        submit_button();
+        ?>
+    </form>
+    <?php
+}
 
 
 ?>

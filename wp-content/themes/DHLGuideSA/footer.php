@@ -29,10 +29,18 @@
 
 <!--	Feedback	-->
 
+
+<?php
+
+//Get options set out in the functions page.
+
+$options = get_option('dhlguidesa_feedbackform');
+
+if ($options['dhlguidesa_feedback_checkbox'] == true){?>
 			<div class="feedbackBar">
 				<div class="container">
 					<div class="col-xs-12 text-center">
-						<p>What's missing from this page? Do let us know if there's anything that you'd like to see feature. <strong>We'd love to here your <a href="#" data-toggle="modal" data-target="#myModal">feedback</a></strong></p>
+						<p>What's missing from this page? Do let us know if there's anything that you'd like to see feature. <strong><a href="#" data-toggle="modal" data-target="#myModal">We'd love to hear your feedback</a></strong></p>
 					</div>
 				</div>
 			</div>
@@ -46,12 +54,24 @@
 							<h4 class="modal-title" id="myModalLabel">Leave your feedback</h4>
 						</div>
 						<div class="modal-body">
-							<?php echo do_shortcode('[contact-form-7 id="184" title="Feedback Form"]') ?>
+							<?php
+                            if ($options['dhlguidesa_feedback_shortcode'] != ''){
+							    echo do_shortcode($options['dhlguidesa_feedback_shortcode']);
+                            }else {
+                                echo do_shortcode('[contact-form-7 id="184" title="Feedback Form"]');
+                            }
+                            ?>
+
+
+
 						</div>
 					</div>
 				</div>
 			</div>
 
+    <?php
+}
+?>
 
 
 
