@@ -456,6 +456,8 @@ body {
       margin: 15px 0; }
   .singleCountries section.countryInformation .informationContent {
     padding: 20px; }
+    .singleCountries section.countryInformation .informationContent * {
+      word-wrap: break-word; }
 
 .usefulInfo section.introduction h1 {
   text-align: center;
