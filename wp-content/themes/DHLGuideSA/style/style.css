@@ -50,6 +50,10 @@ a {
 img {
   width: 100%; }
 
+strong {
+  font-family: 'Frutiger Neue LT W06 Bold', Verdana, sans-serif;
+  font-weight: normal; }
+
 body {
   transition: transform 0.3s; }
   body.mobileshowsidebar {
@@ -187,6 +191,9 @@ body {
             body .headerContainer .header .headerWrapper .navbar .navbar-collapse .searchFormContainer {
               padding-bottom: 10px;
               border-bottom: 1px solid #ebebeb; }
+              @media only screen and (min-width: 768px) {
+                body .headerContainer .header .headerWrapper .navbar .navbar-collapse .searchFormContainer {
+                  border: none; } }
               @media only screen and (min-width: 1200px) {
                 body .headerContainer .header .headerWrapper .navbar .navbar-collapse .searchFormContainer form.search {
                   float: right; } }
@@ -241,6 +248,8 @@ body {
                       body .headerContainer .header .headerWrapper .navbar .navbar-collapse .searchFormContainer form.search #headerSearchForm .showSearch.active {
                         background: #d40511;
                         color: #ffcc00; }
+                        body .headerContainer .header .headerWrapper .navbar .navbar-collapse .searchFormContainer form.search #headerSearchForm .showSearch.active:before {
+                          content: "\e014"; }
                     body .headerContainer .header .headerWrapper .navbar .navbar-collapse .searchFormContainer form.search #headerSearchForm #formComponents {
                       display: none;
                       position: absolute;
@@ -289,13 +298,13 @@ body {
                     color: inherit; } }
             body .headerContainer .header .headerWrapper .navbar .navbar-collapse ul.navbar-nav li a {
               color: #333333; }
-            body .headerContainer .header .headerWrapper .navbar .navbar-collapse ul.navbar-nav li.current-menu-item a, body .headerContainer .header .headerWrapper .navbar .navbar-collapse ul.navbar-nav li.current-menu-parent a {
+            body .headerContainer .header .headerWrapper .navbar .navbar-collapse ul.navbar-nav li.current-menu-item > a, body .headerContainer .header .headerWrapper .navbar .navbar-collapse ul.navbar-nav li.current-menu-parent > a {
               font-family: 'Frutiger Neue LT W06 Bold';
               background: none;
               font-weight: bold;
               color: #d40511; }
               @media only screen and (min-width: 1200px) {
-                body .headerContainer .header .headerWrapper .navbar .navbar-collapse ul.navbar-nav li.current-menu-item a, body .headerContainer .header .headerWrapper .navbar .navbar-collapse ul.navbar-nav li.current-menu-parent a {
+                body .headerContainer .header .headerWrapper .navbar .navbar-collapse ul.navbar-nav li.current-menu-item > a, body .headerContainer .header .headerWrapper .navbar .navbar-collapse ul.navbar-nav li.current-menu-parent > a {
                   color: #333333; } }
 
 .pageHome section {
@@ -461,7 +470,8 @@ body {
     background: none;
     border: none;
     -webkit-box-shadow: none;
-    box-shadow: none; }
+    box-shadow: none;
+    position: relative; }
     .usefulInfo section.information .panel-group .panel:last-child .panel-heading a.collapsed .panel-heading-content-wrapper {
       border-bottom: none; }
     .usefulInfo section.information .panel-group .panel .panel-heading {
@@ -471,12 +481,30 @@ body {
       .usefulInfo section.information .panel-group .panel .panel-heading a {
         margin: 50px 0px;
         border: none; }
+        .usefulInfo section.information .panel-group .panel .panel-heading a:after {
+          color: #d40511;
+          position: absolute;
+          right: 20px;
+          top: 13px;
+          /* symbol for "opening" panels */
+          font-family: 'Glyphicons Halflings';
+          /* essential for enabling glyphicon */
+          content: "\2212";
+          /* adjust as needed, taken from bootstrap.css */ }
+        .usefulInfo section.information .panel-group .panel .panel-heading a.collapsed:after {
+          color: #d40511;
+          position: absolute;
+          right: 20px;
+          top: 13px;
+          /* symbol for "collapsed" panels */
+          content: "\2b";
+          /* adjust as needed, taken from bootstrap.css */ }
         .usefulInfo section.information .panel-group .panel .panel-heading a .panel-heading-content-wrapper {
           border-bottom: 1px solid #c1c1c1;
           padding: 15px 0; }
           .usefulInfo section.information .panel-group .panel .panel-heading a .panel-heading-content-wrapper h4 {
-            font-family: 'Frutiger Neue LT W06 Bold';
-            font-weight: bold;
+            font-family: 'Frutiger Neue LT W06 Bold', Verdana, sans-serif;
+            font-weight: normal;
             color: #1c1c1c; }
     .usefulInfo section.information .panel-group .panel .panel-body {
       border-top: none; }

@@ -37,7 +37,6 @@
 				</div>
 			</div>
 
-
 			<!-- Modal -->
 			<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 				<div class="modal-dialog" role="document">
@@ -47,7 +46,7 @@
 							<h4 class="modal-title" id="myModalLabel">Leave your feedback</h4>
 						</div>
 						<div class="modal-body">
-							<?php echo do_shortcode('[contact-form-7 id="44" title="Feedback Form"]') ?>
+							<?php echo do_shortcode('[contact-form-7 id="184" title="Feedback Form"]') ?>
 						</div>
 					</div>
 				</div>

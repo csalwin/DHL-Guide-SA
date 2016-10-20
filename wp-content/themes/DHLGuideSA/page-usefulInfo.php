@@ -13,10 +13,8 @@ get_header();?>
 <?php if (have_posts()): while (have_posts()) : the_post(); ?>
 
 <div class="container content usefulInfo">
-    <section class="row headerSlider">
-        <section class="row headerslider">
-            <?php the_post_thumbnail();?>
-        </section>
+    <section class="row headerslider">
+        <?php the_post_thumbnail();?>
     </section>
 
     <section class="row introduction">
@@ -43,7 +41,7 @@ get_header();?>
                             <div class="panel">
                                 <div class="panel-heading" role="tab" id="heading<?php echo $post->post_name?>">
 
-                                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#<?php echo $post->post_name?>" aria-expanded="true" aria-controls="<?php echo $post->post_name?>">
+                                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#<?php echo $post->post_name?>" aria-expanded="true" aria-controls="<?php echo $post->post_name?>" class="collapsed">
                                         <div class="panel-heading-content-wrapper">
                                             <h4 class="panel-title">
                                                 <?php the_title(); ?>

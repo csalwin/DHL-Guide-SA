@@ -68,7 +68,7 @@ get_header();?>
                         $image = get_field('country_thumbnail');
 
                         ?>
-                        <div class="countryWrapper col-xs-6 col-md-3">
+                        <div class="countryWrapper col-xs-12 col-sm-6 col-md-3">
                             <a href="<?php the_permalink(); ?>">
                                 <img src="<?php echo $image['sizes']['large']?>" alt="<?php echo $image['alt']?>" title="<?php echo $image['title'] ?>"/>
                                 <div class="hoverOverlay"></div>

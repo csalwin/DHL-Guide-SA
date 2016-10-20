@@ -187,7 +187,11 @@ body {
             }
             .searchFormContainer {
               padding-bottom: 10px;
+
               border-bottom: 1px solid #ebebeb;
+              @include tablet {
+                border: none;
+              }
 
               form.search {
                 @include desktop {
@@ -257,6 +261,9 @@ body {
                       &.active {
                         background: $dhlRed;
                         color: $dhlYellow;
+                        &:before {
+                          content: "\e014";
+                        }
                       }
                     }
                     #formComponents {
@@ -338,7 +345,7 @@ body {
                   color: #333333;
                 }
                 &.current-menu-item, &.current-menu-parent {
-                  a {
+                  > a {
                     font-family: 'Frutiger Neue LT W06 Bold';
                     background: none;
                     font-weight: bold;

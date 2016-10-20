@@ -7,7 +7,6 @@
 			<?php the_post_thumbnail();?>
 		</section>
 		<section class="row introduction">
-
 			<div class="col-xs-12 col-sm-2 countryFlag">
 				<?php
 				$flag = get_field('country_flag'); ?>
@@ -19,13 +18,15 @@
 			<div class="col-xs-12 col-sm-10">
 				<p><?php echo get_field('about_country') ?></p>
 			</div>
-
-
 		</section>
 
 		<section class="row countryInformation">
 			<div class="yellowHeading">
-				<h2>Heading</h2>
+				<h2><?php if (get_field('information_heading') != '') {
+				    echo get_field('information_heading');
+                    }else {
+                        echo 'Country Information';
+                    } ?></h2>
 			</div>
 			<div class="informationContent">
 				<?php the_content(); ?>
