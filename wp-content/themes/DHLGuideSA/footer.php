@@ -50,7 +50,7 @@ if ($options['dhlguidesa_feedback_checkbox'] == true){?>
 				<div class="modal-dialog" role="document">
 					<div class="modal-content">
 						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&#10005;</span></button>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" class="glyphicon glyphicon-remove"></span></button>
 							<h4 class="modal-title" id="myModalLabel">Leave your feedback</h4>
 						</div>
 						<div class="modal-body">

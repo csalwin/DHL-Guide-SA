@@ -81,14 +81,15 @@ footer {
     button {
       &.close {
         color: #222222;
-        border: 1px solid #333333;
-        border-radius: 100%;
+        //border: 1px solid #333333;
+        //border-radius: 100%;
         opacity: .8;
         span {
-          padding: 4px;
+          padding: 5px;
           font-size: 17px;
           position: relative;
-          top: -2px;
+          /* top: 0px; */
+          font-weight: normal;
 
         }
       }

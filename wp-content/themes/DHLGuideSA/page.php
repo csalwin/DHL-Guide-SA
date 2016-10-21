@@ -1,45 +1,32 @@
-<?php get_header(); ?>
+<?php
+/**
+ * Created by PhpStorm.
+ * User: Chris
+ * Date: 13/09/2016
+ * Time: 17:27
+ *
+ */
 
-	<main role="main">
-		<!-- section -->
-		<section>
+get_header();?>
 
-			<h1><?php the_title(); ?></h1>
+<?php if (have_posts()): while (have_posts()) : the_post(); ?>
 
-		<?php if (have_posts()): while (have_posts()) : the_post(); ?>
+<div class="container content usefulInfo">
+	<section class="row headerslider">
+		<?php the_post_thumbnail();?>
+	</section>
 
-			<!-- article -->
-			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<section class="row">
+		<h1><?php the_title()?></h1>
+		<div class="pageContent">
+			<?php the_content(); ?>
+		</div>
+	</section>
+</div>
 
-				<?php the_content(); ?>
-
-				<?php comments_template( '', true ); // Remove if you don't want comments ?>
-
-				<br class="clear">
-
-				<?php edit_post_link(); ?>
-
-			</article>
-			<!-- /article -->
-
-		<?php endwhile; ?>
-
-		<?php else: ?>
-
-			<!-- article -->
-			<article>
-
-				<h2><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h2>
-
-			</article>
-			<!-- /article -->
-
-		<?php endif; ?>
-
-		</section>
-		<!-- /section -->
-	</main>
-
-<?php get_sidebar(); ?>
+<?php
+endwhile;
+endif;
+?>
 
 <?php get_footer(); ?>

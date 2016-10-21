@@ -231,9 +231,11 @@ body {
                   }
                   button span, .showSearch {
                     color: $dhlRed;
+                    cursor: pointer;
                   }
                   .showSearch {
                     display: none;
+
 
                   }
                   @include tablet {
@@ -351,7 +353,7 @@ body {
                   > a {
                     font-family: 'Frutiger Neue LT W06 Bold';
                     background: none;
-                    font-weight: bold;
+                    font-weight: normal;
                     color: $dhlRed;
                     @include desktop {
                       color: #333333;

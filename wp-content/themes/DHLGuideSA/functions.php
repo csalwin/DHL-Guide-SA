@@ -361,6 +361,11 @@ function html5blankgravatar ($avatar_defaults)
     return $avatar_defaults;
 }
 
+//Remove Default post type
+function remove_default_post_type() {
+    remove_menu_page('edit.php');
+}
+
 // Threaded Comments
 function enable_threaded_comments()
 {
@@ -431,6 +436,7 @@ add_action('init', 'create_post_type_guidelines'); // Add Guidelines Custom Post
 
 add_action('widgets_init', 'my_remove_recent_comments_style'); // Remove inline Recent Comment Styles from wp_head()
 add_action('init', 'html5wp_pagination'); // Add our HTML5 Pagination
+add_action('admin_menu','remove_default_post_type');//Remove Default post type
 
 // Remove Actions
 remove_action('wp_head', 'feed_links_extra', 3); // Display the links to the extra feeds such as category feeds

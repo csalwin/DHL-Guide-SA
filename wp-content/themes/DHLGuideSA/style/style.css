@@ -225,7 +225,8 @@ body {
                 body .headerContainer .header .headerWrapper .navbar .navbar-collapse .searchFormContainer form.search #headerSearchForm #formComponents {
                   display: block; }
                 body .headerContainer .header .headerWrapper .navbar .navbar-collapse .searchFormContainer form.search #headerSearchForm button span, body .headerContainer .header .headerWrapper .navbar .navbar-collapse .searchFormContainer form.search #headerSearchForm .showSearch {
-                  color: #d40511; }
+                  color: #d40511;
+                  cursor: pointer; }
                 body .headerContainer .header .headerWrapper .navbar .navbar-collapse .searchFormContainer form.search #headerSearchForm .showSearch {
                   display: none; }
                 @media only screen and (min-width: 768px) {
@@ -305,7 +306,7 @@ body {
             body .headerContainer .header .headerWrapper .navbar .navbar-collapse ul.navbar-nav li.current-menu-item > a, body .headerContainer .header .headerWrapper .navbar .navbar-collapse ul.navbar-nav li.current-menu-parent > a {
               font-family: 'Frutiger Neue LT W06 Bold';
               background: none;
-              font-weight: bold;
+              font-weight: normal;
               color: #d40511; }
               @media only screen and (min-width: 1200px) {
                 body .headerContainer .header .headerWrapper .navbar .navbar-collapse ul.navbar-nav li.current-menu-item > a, body .headerContainer .header .headerWrapper .navbar .navbar-collapse ul.navbar-nav li.current-menu-parent > a {
@@ -575,14 +576,13 @@ footer {
       font-size: 25px; }
     .modal .modal-content button.close {
       color: #222222;
-      border: 1px solid #333333;
-      border-radius: 100%;
       opacity: .8; }
       .modal .modal-content button.close span {
-        padding: 4px;
+        padding: 5px;
         font-size: 17px;
         position: relative;
-        top: -2px; }
+        /* top: 0px; */
+        font-weight: normal; }
     .modal .modal-content form input[type="text"], .modal .modal-content form textarea, .modal .modal-content form input[type="email"] {
       border: 1px solid #e0e0e0;
       background: #f6f6f6; }
