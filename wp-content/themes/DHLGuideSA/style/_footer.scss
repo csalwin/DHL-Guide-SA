@@ -4,7 +4,10 @@ footer {
   padding-top: 23px;
   padding-bottom: 10px;
   background: #dbdbdb;
-  margin-bottom: 55px;
+  margin-bottom: 95px;
+  @include tablet {
+    margin-bottom: 55px;
+  }
   .social {
     position: relative;
     li {

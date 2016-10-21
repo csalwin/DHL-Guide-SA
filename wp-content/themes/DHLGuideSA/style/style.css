@@ -54,6 +54,42 @@ strong {
   font-family: 'Frutiger Neue LT W06 Bold', Verdana, sans-serif;
   font-weight: normal; }
 
+.hoverOverlay {
+  display: none;
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(50, 50, 50, 0.3); }
+
+.guideline {
+  margin-top: 20px; }
+  .guideline .pageWrapper {
+    position: relative;
+    border: 1px solid #dbdbdb;
+    margin-bottom: 25px;
+    -webkit-box-shadow: 0px 5px 20px -2px rgba(50, 50, 50, 0.77);
+    -moz-box-shadow: 0px 5px 20px -2px rgba(50, 50, 50, 0.77);
+    box-shadow: 0px 5px 20px -2px rgba(50, 50, 50, 0.77); }
+    .guideline .pageWrapper .imgWrapper {
+      width: 100%;
+      max-height: 150px;
+      overflow: hidden;
+      display: block; }
+      .guideline .pageWrapper .imgWrapper img {
+        display: block;
+        width: 100%;
+        min-height: 150px; }
+    .guideline .pageWrapper .textWrapper {
+      padding: 15px 0; }
+    .guideline .pageWrapper:hover {
+      -webkit-box-shadow: 0px 5px 20px -2px rgba(50, 50, 50, 0.17);
+      -moz-box-shadow: 0px 5px 20px -2px rgba(50, 50, 50, 0.17);
+      box-shadow: 0px 5px 20px -2px rgba(50, 50, 50, 0.17); }
+      .guideline .pageWrapper:hover .hoverOverlay {
+        display: block; }
+
 body {
   transition: transform 0.3s; }
   body.mobileshowsidebar {
@@ -145,7 +181,7 @@ body {
               border: none;
               left: 0; }
               body .headerContainer .header .headerWrapper .navbar .navbar-toggle.collapsed span.icon-bar {
-                background-color: #888;
+                background-color: #ffffff;
                 width: 22px;
                 height: 2px;
                 float: none;
@@ -370,7 +406,7 @@ body {
               font-size: 15px; }
               @media only screen and (min-width: 768px) {
                 .pageHome section.headerSlider .bx-wrapper .bx-viewport .slide-pane .headerBanner span {
-                  font-size: 40px; } }
+                  font-size: 30px; } }
   .pageHome section .heading {
     font-size: 36px;
     font-weight: 100; }
@@ -383,14 +419,6 @@ body {
       .pageHome section.countriesBar .countryWrapper a {
         position: relative;
         display: block; }
-        .pageHome section.countriesBar .countryWrapper a .hoverOverlay {
-          display: none;
-          top: 0;
-          left: 0;
-          position: absolute;
-          width: 100%;
-          height: 100%;
-          background: rgba(50, 50, 50, 0.3); }
         .pageHome section.countriesBar .countryWrapper a img {
           width: 100%;
           -webkit-box-shadow: 0px 5px 20px -2px rgba(50, 50, 50, 0.77);
@@ -402,25 +430,6 @@ body {
           -webkit-box-shadow: 0px 5px 20px -2px rgba(50, 50, 50, 0.17);
           -moz-box-shadow: 0px 5px 20px -2px rgba(50, 50, 50, 0.17);
           box-shadow: 0px 5px 20px -2px rgba(50, 50, 50, 0.17); }
-  .pageHome section.guidelines .guideline {
-    margin-top: 20px; }
-    .pageHome section.guidelines .guideline .pageWrapper {
-      border: 1px solid #dbdbdb;
-      margin-bottom: 25px;
-      -webkit-box-shadow: 0px 5px 20px -2px rgba(50, 50, 50, 0.77);
-      -moz-box-shadow: 0px 5px 20px -2px rgba(50, 50, 50, 0.77);
-      box-shadow: 0px 5px 20px -2px rgba(50, 50, 50, 0.77); }
-      .pageHome section.guidelines .guideline .pageWrapper .imgWrapper {
-        width: 100%;
-        max-height: 150px;
-        overflow: hidden;
-        display: block; }
-        .pageHome section.guidelines .guideline .pageWrapper .imgWrapper img {
-          display: block;
-          width: 100%;
-          min-height: 150px; }
-      .pageHome section.guidelines .guideline .pageWrapper .textWrapper {
-        padding: 15px 0; }
 
 .singleCountries section.introduction .countryFlag {
   padding: 30px; }
@@ -446,7 +455,7 @@ body {
       margin-top: 20px; } }
 .singleCountries section.countryInformation {
   margin-top: 20px;
-  border: 1px solid #6c6c6c; }
+  border: 1px solid #dbdbdb; }
   .singleCountries section.countryInformation .yellowHeading {
     background: #ffcc00;
     text-align: center;
@@ -468,27 +477,27 @@ body {
   @media only screen and (min-width: 1200px) {
     .usefulInfo section.introduction .theContent {
       padding: 10px 150px; } }
-.usefulInfo section.information .panel-group {
+.usefulInfo section.accordian .panel-group {
   border: 1px solid #6f6f6f;
   -webkit-box-shadow: 0px 5px 20px -2px rgba(50, 50, 50, 0.77);
   -moz-box-shadow: 0px 5px 20px -2px rgba(50, 50, 50, 0.77);
   box-shadow: 0px 5px 20px -2px rgba(50, 50, 50, 0.77); }
-  .usefulInfo section.information .panel-group .panel {
+  .usefulInfo section.accordian .panel-group .panel {
     background: none;
     border: none;
     -webkit-box-shadow: none;
     box-shadow: none;
     position: relative; }
-    .usefulInfo section.information .panel-group .panel:last-child .panel-heading a.collapsed .panel-heading-content-wrapper {
+    .usefulInfo section.accordian .panel-group .panel:last-child .panel-heading a.collapsed .panel-heading-content-wrapper {
       border-bottom: none; }
-    .usefulInfo section.information .panel-group .panel .panel-heading {
+    .usefulInfo section.accordian .panel-group .panel .panel-heading {
       border: none;
       background: none;
       padding: 0px 15px; }
-      .usefulInfo section.information .panel-group .panel .panel-heading a {
+      .usefulInfo section.accordian .panel-group .panel .panel-heading a {
         margin: 50px 0px;
         border: none; }
-        .usefulInfo section.information .panel-group .panel .panel-heading a:after {
+        .usefulInfo section.accordian .panel-group .panel .panel-heading a:after {
           color: #d40511;
           position: absolute;
           right: 20px;
@@ -498,7 +507,7 @@ body {
           /* essential for enabling glyphicon */
           content: "\2212";
           /* adjust as needed, taken from bootstrap.css */ }
-        .usefulInfo section.information .panel-group .panel .panel-heading a.collapsed:after {
+        .usefulInfo section.accordian .panel-group .panel .panel-heading a.collapsed:after {
           color: #d40511;
           position: absolute;
           right: 20px;
@@ -506,22 +515,26 @@ body {
           /* symbol for "collapsed" panels */
           content: "\2b";
           /* adjust as needed, taken from bootstrap.css */ }
-        .usefulInfo section.information .panel-group .panel .panel-heading a .panel-heading-content-wrapper {
+        .usefulInfo section.accordian .panel-group .panel .panel-heading a .panel-heading-content-wrapper {
           border-bottom: 1px solid #c1c1c1;
-          padding: 15px 0; }
-          .usefulInfo section.information .panel-group .panel .panel-heading a .panel-heading-content-wrapper h4 {
+          padding: 15px 25px 15px 0; }
+          .usefulInfo section.accordian .panel-group .panel .panel-heading a .panel-heading-content-wrapper h4 {
             font-family: 'Frutiger Neue LT W06 Bold', Verdana, sans-serif;
             font-weight: normal;
             color: #1c1c1c; }
-    .usefulInfo section.information .panel-group .panel .panel-body {
-      border-top: none; }
+    .usefulInfo section.accordian .panel-group .panel .panel-body {
+      border-top: none;
+      border-bottom: 1px solid #c1c1c1; }
 
 footer {
   position: relative;
   padding-top: 23px;
   padding-bottom: 10px;
   background: #dbdbdb;
-  margin-bottom: 55px; }
+  margin-bottom: 95px; }
+  @media only screen and (min-width: 768px) {
+    footer {
+      margin-bottom: 55px; } }
   footer .social {
     position: relative; }
     footer .social li {

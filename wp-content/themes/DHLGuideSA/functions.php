@@ -568,18 +568,18 @@ function create_post_type_guidelines()
     register_post_type('guidelines', // Register Custom Post Type
         array(
             'labels' => array(
-                'name' => __('Import Export guidelines', 'html5blank'), // Rename these to suit
-                'singular_name' => __('Import Export guideline', 'html5blank'),
+                'name' => __('Useful Information', 'html5blank'), // Rename these to suit
+                'singular_name' => __('Useful Information', 'html5blank'),
                 'add_new' => __('Add New', 'html5blank'),
-                'add_new_item' => __('Add New Guideline', 'html5blanks'),
+                'add_new_item' => __('Add New', 'html5blanks'),
                 'edit' => __('Edit', 'html5blank'),
-                'edit_item' => __('Edit Guideline', 'html5blank'),
-                'new_item' => __('New Guideline', 'html5blank'),
-                'view' => __('View Guidelines', 'html5blank'),
-                'view_item' => __('View Guideline Post', 'html5blank'),
-                'search_items' => __('Search Guidelines', 'html5blank'),
-                'not_found' => __('No Guidelines found', 'html5blank'),
-                'not_found_in_trash' => __('No Guidelines found in Trash', 'html5blank')
+                'edit_item' => __('Edit Information', 'html5blank'),
+                'new_item' => __('New Information', 'html5blank'),
+                'view' => __('View Information', 'html5blank'),
+                'view_item' => __('View Information Post', 'html5blank'),
+                'search_items' => __('Search Useful Information', 'html5blank'),
+                'not_found' => __('No Information found', 'html5blank'),
+                'not_found_in_trash' => __('No Information found in Trash', 'html5blank')
             ),
             'public' => true,
             'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages

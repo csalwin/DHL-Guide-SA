@@ -36,8 +36,6 @@ get_header();?>
 
                    <?php
                 }
-
-
             }else {
 
             }
@@ -49,7 +47,15 @@ get_header();?>
     <section class="row countriesBar">
         <div class="text-center">
             <h2 class="fsf heading">Sending or receiving a shipment?</h2>
-            <p class="headingTagLine">Regulations vary per country. Check out our <a href="#">Country Guidelines</a> first.</p>
+            <p class="headingTagLine">
+                <?php
+                if (get_field('countries_intro')) {
+                echo get_field('countries_intro');
+                }
+                else {
+                    echo 'Regulations vary per country. Check out our Country Guidelines first.</p>';
+                };
+                ?>
         </div>
         <div class="row">
             <?php
@@ -91,7 +97,16 @@ get_header();?>
     <section class="row guidelines">
         <div class="text-center">
             <h1 class="fsf heading">South Africa Import and Export Guidelines</h1>
-            <p class="headingTagLine">Import and Export regulations change all the time. Make sure you're a step ahead with our <a href="#">Shipping Guidelines</a></p>
+            <p class="headingTagLine">
+                <?php
+                    if (get_field('guidelines_intro')) {
+                        echo get_field('guidelines_intro');
+                    }
+                    else {
+                        echo 'Import and Export regulations change all the time. Make sure you\'re a step ahead with our <a href="#">Shipping Guidelines</a></p>';
+                    };
+                ?>
+            </p>
         </div>
 
         <div class="row">
@@ -123,7 +138,9 @@ get_header();?>
                                     <p><?php the_title(); ?></p>
                                     <a href="<?php echo get_sub_field('page').'#'.$post->post_name; ?>"><?php echo $post_link_text; ?></a>
                                 </div>
+                                <div class="hoverOverlay"></div>
                             </div>
+
 
                         </div>
                         <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>

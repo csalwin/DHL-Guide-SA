@@ -5,7 +5,7 @@
  * Date: 13/09/2016
  * Time: 17:27
  *
- * Template Name: Useful Information
+ * Template Name: Useful Info
  */
 
 get_header();?>
@@ -23,51 +23,42 @@ get_header();?>
             <?php the_content(); ?>
         </div>
     </section>
-    <section class="information accordian">
-        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+    <section class="information">
+        <div class="row">
             <?php
-            // check if the repeater field has rows of data
-            if( have_rows('list_of_posts') ):
-                // loop through the rows of data
-                while ( have_rows('list_of_posts') ) : the_row();
+            $my_wp_query = new WP_Query();
+            $all_wp_pages = $my_wp_query->query(array('post_type' => 'page'));
 
-                    $post_object = get_sub_field('post');
+            // Get the page as an Object
+            $page =  get_the_ID();
 
-                    if( $post_object ):
-                        // override $post
-                        $post = $post_object;
-                        setup_postdata( $post );
-                        ?>
-                            <div class="panel">
-                                <div class="panel-heading" role="tab" id="heading<?php echo $post->post_name?>">
+            // Filter through all pages and find Portfolio's children
+            $pages = get_page_children( $page, $all_wp_pages );
 
-                                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#<?php echo $post->post_name?>" aria-expanded="true" aria-controls="<?php echo $post->post_name?>" class="collapsed">
-                                        <div class="panel-heading-content-wrapper">
-                                            <h4 class="panel-title">
-                                                <?php the_title(); ?>
-                                            </h4>
+            //echo '<pre>' . print_r( $pages, true ) . '</pre>';
+
+            foreach ($pages as $page){
+                ?>
+                                        <div class="col-xs-12 col-md-4 guideline">
+                                            <div class="pageWrapper">
+                                                <div class="imgWrapper">
+                                                    <a href="<?php echo $page->guid ?>"><?php the_post_thumbnail($page->ID, 'large') ?></a>
+                                                </div>
+                                                <div class="textWrapper text-center">
+                                                    <p><?php echo $page->post_title; ?></p>
+                                                    <a href="<?php echo $page->guid ?>">Find out more</a>
+                                                </div>
+                                                <div class="hoverOverlay"></div>
+                                            </div>
                                         </div>
-                                    </a>
-                                </div>
-                                <div id="<?php echo $post->post_name?>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="<?php echo $post->post_name?>">
-                                    <div class="panel-body">
-                                        <?php the_content(); ?>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                        <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
-                    <?php endif;
-
-                endwhile;
-
-            else :
-
-                // no rows found
-
-            endif;
+                                        <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
+                                    <?php
             ?>
+
+            <?php
+            }
+            ?>
+
 
         </div>
 
