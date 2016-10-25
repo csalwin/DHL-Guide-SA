@@ -83,11 +83,11 @@ strong {
         min-height: 150px; }
     .guideline .pageWrapper .textWrapper {
       padding: 15px 0; }
-    .guideline .pageWrapper:hover {
+    .guideline .pageWrapper:hover, .guideline .pageWrapper:focus {
       -webkit-box-shadow: 0px 5px 20px -2px rgba(50, 50, 50, 0.17);
       -moz-box-shadow: 0px 5px 20px -2px rgba(50, 50, 50, 0.17);
       box-shadow: 0px 5px 20px -2px rgba(50, 50, 50, 0.17); }
-      .guideline .pageWrapper:hover .hoverOverlay {
+      .guideline .pageWrapper:hover .hoverOverlay, .guideline .pageWrapper:focus .hoverOverlay {
         display: block; }
 
 body {
@@ -441,9 +441,9 @@ body {
           -webkit-box-shadow: 0px 5px 20px -2px rgba(50, 50, 50, 0.77);
           -moz-box-shadow: 0px 5px 20px -2px rgba(50, 50, 50, 0.77);
           box-shadow: 0px 5px 20px -2px rgba(50, 50, 50, 0.77); }
-        .pageHome section.countriesBar .countryWrapper a:hover .hoverOverlay {
+        .pageHome section.countriesBar .countryWrapper a:hover .hoverOverlay, .pageHome section.countriesBar .countryWrapper a:focus .hoverOverlay {
           display: block; }
-        .pageHome section.countriesBar .countryWrapper a:hover img {
+        .pageHome section.countriesBar .countryWrapper a:hover img, .pageHome section.countriesBar .countryWrapper a:focus img {
           -webkit-box-shadow: 0px 5px 20px -2px rgba(50, 50, 50, 0.17);
           -moz-box-shadow: 0px 5px 20px -2px rgba(50, 50, 50, 0.17);
           box-shadow: 0px 5px 20px -2px rgba(50, 50, 50, 0.17); }

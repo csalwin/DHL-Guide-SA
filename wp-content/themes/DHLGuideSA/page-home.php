@@ -32,7 +32,7 @@ get_header();?>
                         $category = get_field('category');
 
                         if ($post->post_type == 'guidelines') {
-                            if ($category == 'useful-information-page') {
+                            if ($category == 'useful-information-page' || $category == 'useful-information') {
                                 $link = $post->guid;
                             } else {
                                 $link = '/useful-information/' . $category . '/#' . $post->post_name;

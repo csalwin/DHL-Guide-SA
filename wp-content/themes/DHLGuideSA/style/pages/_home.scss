@@ -101,7 +101,7 @@
             @include shadow('');
 
           }
-          &:hover {
+          &:hover, &:focus {
             .hoverOverlay {
               display: block;
             }

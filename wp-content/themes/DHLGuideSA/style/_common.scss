@@ -183,9 +183,8 @@ strong {
     }
     .textWrapper {
       padding: 15px 0;
-
     }
-    &:hover {
+    &:hover, &:focus {
       .hoverOverlay {
         display: block;
       }
