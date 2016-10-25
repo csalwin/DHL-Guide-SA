@@ -26,7 +26,69 @@ get_header();?>
     <section class="information">
         <div class="row">
             <?php
+
             global $post;
+
+            $parent = new WP_Query(array(
+
+                'post_parent'       => $post->ID,
+                'order'             => 'ASC',
+                'post_type'         => 'page',
+                'posts_per_page'    => -1
+
+            ));
+            if($parent->have_posts() ) : while ( $parent->have_posts() ) : $parent->the_post();
+
+                //            $my_wp_query = new WP_Query();
+                //            $all_wp_pages = $my_wp_query->query(array('post_type' => 'page'));
+                //
+                //            // Get the page as an Object
+                //            $page =  get_the_ID();
+                //
+                //            // Filter through all pages and find Portfolio's children
+                //            $pages = get_page_children( $page, $all_wp_pages );
+                //
+                //            // Get the page as an Object
+                //            $usefulInfo =  get_page_by_title('Useful Information');
+                //
+                //            // Filter through all pages and find Portfolio's children
+                //            $usefulInfo_children = get_page_children( $usefulInfo->post_parent, $all_wp_pages );
+                //
+                //            $choices = array ();
+                //            foreach ($usefulInfo_children as $useful_child){
+                //                echo $choices[$useful_child->post_name] = $useful_child->post_title;
+                //            }
+                //
+                //
+                //            echo '<pre>' . print_r( $post , true ) . '</pre>';
+                //            echo '<pre>' . print_r( $usefulInfo , true ) . '</pre>';
+
+
+
+
+                $imagePage = get_field('thumbnail_image');
+
+                ?>
+                <div class="col-xs-12 col-md-4 guideline">
+                    <div class="pageWrapper">
+                        <div class="imgWrapper">
+                            <a href="<?php echo $post->guid ?>"><img src="<?php echo $imagePage['url'] ?>" alt="<?php echo $imagePage['alt']?>"/></a>
+                        </div>
+                        <div class="textWrapper text-center">
+                            <p><?php echo $post->post_title; ?></p>
+                            <a href="<?php echo $post->guid ?>">Find out more</a>
+                        </div>
+                        <a href="<?php echo $post->guid ?>"><div class="hoverOverlay"></div></a>
+                    </div>
+                </div>
+                <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
+                <?php
+            endwhile;
+            endif;
+
+            wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly
+
+
             $args = array(
                 'post_type'=> 'guidelines',
                 'order'    => 'ASC',
@@ -70,69 +132,10 @@ get_header();?>
                 };
             endwhile;
             endif;
-            wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly
 
 
-
-            $parent = new WP_Query(array(
-
-                'post_parent'       => $post->ID,
-                'order'             => 'ASC',
-                'post_type'         => 'page',
-                'posts_per_page'    => -1
-
-            ));
-            if($parent->have_posts() ) : while ( $parent->have_posts() ) : $parent->the_post();
-
-//            $my_wp_query = new WP_Query();
-//            $all_wp_pages = $my_wp_query->query(array('post_type' => 'page'));
-//
-//            // Get the page as an Object
-//            $page =  get_the_ID();
-//
-//            // Filter through all pages and find Portfolio's children
-//            $pages = get_page_children( $page, $all_wp_pages );
-//
-//            // Get the page as an Object
-//            $usefulInfo =  get_page_by_title('Useful Information');
-//
-//            // Filter through all pages and find Portfolio's children
-//            $usefulInfo_children = get_page_children( $usefulInfo->post_parent, $all_wp_pages );
-//
-//            $choices = array ();
-//            foreach ($usefulInfo_children as $useful_child){
-//                echo $choices[$useful_child->post_name] = $useful_child->post_title;
-//            }
-//
-//
-//            echo '<pre>' . print_r( $post , true ) . '</pre>';
-//            echo '<pre>' . print_r( $usefulInfo , true ) . '</pre>';
-
-            
-
-
-                $imagePage = get_field('thumbnail_image');
-
-                ?>
-                <div class="col-xs-12 col-md-4 guideline">
-                    <div class="pageWrapper">
-                        <div class="imgWrapper">
-                            <a href="<?php echo $post->guid ?>"><img src="<?php echo $imagePage['url'] ?>" alt="<?php echo $imagePage['alt']?>"/></a>
-                        </div>
-                        <div class="textWrapper text-center">
-                            <p><?php echo $post->post_title; ?></p>
-                            <a href="<?php echo $post->guid ?>">Find out more</a>
-                        </div>
-                        <a href="<?php echo $post->guid ?>"><div class="hoverOverlay"></div></a>
-                    </div>
-                </div>
-                <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
-            <?php
-            endwhile;
-            endif;
 
             ?>
-
 
         </div>
 

@@ -53,11 +53,18 @@
 							if ($numPosts < 3) {
 								if (get_field('category') == 'useful-information-page' || get_field('category') == 'useful-information' ) {
 									$numPosts++;
+									$image = get_field('thumbnail_image');
 									?>
 									<div class="col-xs-12 col-md-4 guideline">
 										<div class="pageWrapper">
 											<div class="imgWrapper">
-												<a href="<?php echo $post->guid ?>"><?php the_post_thumbnail($post->ID, 'large') ?></a>
+												<a href="<?php echo $post->guid ?>">
+													<?php if ($image){?>
+														<img src="<?php echo $image['url'] ?>" alt="<?php echo $image['alt']?>"/>
+													<?php }else {
+														the_post_thumbnail($post->ID, 'large');
+													}?>
+                                        </a>
 											</div>
 											<div class="textWrapper text-center">
 												<p><?php echo $post->post_title; ?></p>
