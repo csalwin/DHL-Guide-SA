@@ -54,6 +54,8 @@ if ($options['dhlguidesa_feedback_checkbox'] == true){?>
 							<h4 class="modal-title" id="myModalLabel">Leave your feedback</h4>
 						</div>
 						<div class="modal-body">
+							<p>Your feedback is very important to us, if you feel that something is missing from the Guide please do let us know and we will take this into consideration for the future.</p>
+
 							<?php
                             if ($options['dhlguidesa_feedback_shortcode'] != ''){
 							    echo do_shortcode($options['dhlguidesa_feedback_shortcode']);

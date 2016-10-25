@@ -101,15 +101,18 @@
             @include shadow('');
 
           }
-          &:hover, &:focus {
-            .hoverOverlay {
-              display: block;
+          @include tablet (){
+            &:hover, &:focus {
+              .hoverOverlay {
+                cursor: pointer;
+                display: block;
+              }
+              img {
+                @include shadow(rgba(50, 50, 50, 0.17));
+              }
             }
-            img {
-              @include shadow(rgba(50, 50, 50, 0.17));
-            }
-
           }
+
         }
       }
     }
@@ -117,7 +120,7 @@
       .guideline {
         .textWrapper {
           p.postTitle {
-            min-height: 40px;
+            //min-height: 40px;
           }
           a {
             color: $dhlRed;

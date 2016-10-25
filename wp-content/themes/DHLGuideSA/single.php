@@ -11,6 +11,7 @@
 				<h1><?php the_title();?></h1>
 			</div>
 			<div class="informationContent">
+				<p>&nbsp;</p>
 				<?php the_content(); ?>
 			</div>
 		</section>

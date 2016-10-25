@@ -16,7 +16,7 @@ get_header();?>
 		<?php the_post_thumbnail();?>
 	</section>
 
-	<section class="row">
+	<section class="row pageCopy">
 		<h1><?php the_title()?></h1>
 		<div class="pageContent">
 			<?php the_content(); ?>
