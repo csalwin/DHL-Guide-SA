@@ -4,7 +4,7 @@
 			<footer class="footer container" role="contentinfo">
 				<!-- Social -->
 				<ul class="social col-xs-12 col-md-4">
-					<li><a class="facebook" href="#"><img src="<?php echo get_template_directory_uri() ?>/img/social/facebookCircle.png"/></a></li>
+					<li><a class="facebook" href="https://www.facebook.com/DHLAfrica" target="_blank"><img src="<?php echo get_template_directory_uri() ?>/img/social/facebookCircle.png"/></a></li>
 				</ul>
 
 

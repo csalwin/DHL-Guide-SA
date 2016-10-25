@@ -1,7 +1,16 @@
 body {
+  -webkit-transition: transform 0.3s;
+  -moz-transition: transform 0.3s;
+  -o-transition: transform 0.3s;
   transition: transform 0.3s;
   &.mobileshowsidebar {
-    transform: translateX(-300px);
+    -webkit-transform: translateX(-80%);
+    -moz-transform: translateX(-80%);
+    -o-transform: translateX(-80%);
+    transform: translateX(-80%);
+    -webkit-transition: transform 0.3s;
+    -moz-transition: transform 0.3s;
+    -o-transition: transform 0.3s;
     transition: transform 0.3s;
     overflow: hidden;
 
@@ -158,8 +167,10 @@ body {
             position: relative;
 
             .navbar-brand {
+              width: 75%;
               img {
-                width: 220px;
+                width: 100%;
+                max-width: 220px;
                 display: block;
                 margin: 0 auto;
               }
@@ -171,15 +182,17 @@ body {
             position: absolute;
             top: -30px;
             padding: 20px;
-            right: -310px;
+            right: -91%;
             transition: transform .3s;
-            width: 280px;
+            width: 80%;
+            max-width: 280px;
             background: none;
             height: 8000px !important;
             &.showsidebar {
               display: block;
             }
             @include tablet {
+              max-width: none;
               position: relative;
               display: block;
               width: auto;

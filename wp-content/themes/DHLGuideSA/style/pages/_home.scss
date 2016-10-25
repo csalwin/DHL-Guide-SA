@@ -39,6 +39,9 @@
                 text-transform: uppercase;
                 color: #ffffff;
                 top: 40%;
+                -webkit-transform: translateY(-40%);
+                -moz-transform: translateY(-40%);
+                -o-transform: translateY(-40%);
                 transform: translateY(-40%);
                 left: 8%;
               @include tablet {
@@ -111,6 +114,16 @@
       }
     }
     &.guidelines {
+      .guideline {
+        .textWrapper {
+          p.postTitle {
+            min-height: 40px;
+          }
+          a {
+            color: $dhlRed;
+          }
+        }
+      }
 
     }
   }

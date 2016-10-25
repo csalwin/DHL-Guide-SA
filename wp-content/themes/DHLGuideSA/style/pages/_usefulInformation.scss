@@ -99,6 +99,13 @@
       }
     }
     &.information {
+      .guideline  {
+        .textWrapper {
+          p {
+            min-height: 40px;
+          }
+        }
+      }
 
     }
   }

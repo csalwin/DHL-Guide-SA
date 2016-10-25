@@ -91,9 +91,18 @@ strong {
         display: block; }
 
 body {
+  -webkit-transition: transform 0.3s;
+  -moz-transition: transform 0.3s;
+  -o-transition: transform 0.3s;
   transition: transform 0.3s; }
   body.mobileshowsidebar {
-    transform: translateX(-300px);
+    -webkit-transform: translateX(-80%);
+    -moz-transform: translateX(-80%);
+    -o-transform: translateX(-80%);
+    transform: translateX(-80%);
+    -webkit-transition: transform 0.3s;
+    -moz-transition: transform 0.3s;
+    -o-transition: transform 0.3s;
     transition: transform 0.3s;
     overflow: hidden; }
     @media only screen and (min-width: 768px) {
@@ -203,24 +212,29 @@ body {
             display: block;
             z-index: 3;
             position: relative; }
-            body .headerContainer .header .headerWrapper .navbar .navbar-header .navbar-brand img {
-              width: 220px;
-              display: block;
-              margin: 0 auto; }
+            body .headerContainer .header .headerWrapper .navbar .navbar-header .navbar-brand {
+              width: 75%; }
+              body .headerContainer .header .headerWrapper .navbar .navbar-header .navbar-brand img {
+                width: 100%;
+                max-width: 220px;
+                display: block;
+                margin: 0 auto; }
           body .headerContainer .header .headerWrapper .navbar .navbar-collapse {
             display: none;
             position: absolute;
             top: -30px;
             padding: 20px;
-            right: -310px;
+            right: -91%;
             transition: transform .3s;
-            width: 280px;
+            width: 80%;
+            max-width: 280px;
             background: none;
             height: 8000px !important; }
             body .headerContainer .header .headerWrapper .navbar .navbar-collapse.showsidebar {
               display: block; }
             @media only screen and (min-width: 768px) {
               body .headerContainer .header .headerWrapper .navbar .navbar-collapse {
+                max-width: none;
                 position: relative;
                 display: block;
                 width: auto;
@@ -382,6 +396,9 @@ body {
             text-transform: uppercase;
             color: #ffffff;
             top: 40%;
+            -webkit-transform: translateY(-40%);
+            -moz-transform: translateY(-40%);
+            -o-transform: translateY(-40%);
             transform: translateY(-40%);
             left: 8%; }
             @media only screen and (min-width: 768px) {
@@ -430,6 +447,10 @@ body {
           -webkit-box-shadow: 0px 5px 20px -2px rgba(50, 50, 50, 0.17);
           -moz-box-shadow: 0px 5px 20px -2px rgba(50, 50, 50, 0.17);
           box-shadow: 0px 5px 20px -2px rgba(50, 50, 50, 0.17); }
+  .pageHome section.guidelines .guideline .textWrapper p.postTitle {
+    min-height: 40px; }
+  .pageHome section.guidelines .guideline .textWrapper a {
+    color: #d40511; }
 
 .singleCountries section.introduction .countryFlag {
   padding: 30px; }
@@ -525,6 +546,11 @@ body {
     .usefulInfo section.accordian .panel-group .panel .panel-body {
       border-top: none;
       border-bottom: 1px solid #c1c1c1; }
+.usefulInfo section.information .guideline .textWrapper p {
+  min-height: 40px; }
+
+.singleGuidelines .postContent .postTitle {
+  text-transform: uppercase; }
 
 footer {
   position: relative;

@@ -172,6 +172,7 @@ function html5blank_header_scripts()
         wp_register_script('bxslider', get_template_directory_uri() . '/js/bxslider/jquery.bxslider.min.js', array('jquery'), '1.0.0', true); // Custom scripts
         wp_enqueue_script('bxslider'); // Enqueue it!
 
+
         wp_register_script('html5blankscripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), '1.0.0'); // Custom scripts
         wp_enqueue_script('html5blankscripts'); // Enqueue it!
     }
@@ -587,7 +588,8 @@ function create_post_type_guidelines()
             'supports' => array(
                 'title',
                 'editor',
-                'revisions'
+                'revisions',
+                'thumbnail'
             ), // Go to Dashboard Custom HTML5 Blank post for supports
             'can_export' => true, // Allows export in Tools > Export
             'taxonomies' => array(
@@ -679,6 +681,67 @@ function atom_search_groupby($groupby){
 add_filter('posts_where','atom_search_where');
 add_filter('posts_join', 'atom_search_join');
 add_filter('posts_groupby', 'atom_search_groupby');
+
+
+
+
+// Add custom field to useful information
+if(function_exists("register_field_group"))
+{
+    // Set up the objects needed
+    $my_wp_query = new WP_Query();
+    $all_wp_pages = $my_wp_query->query(array('post_type' => 'page'));
+
+// Get the page as an Object
+    $usefulInfo =  get_page_by_title('Useful Information');
+
+// Filter through all pages and find Portfolio's children
+    $usefulInfo_children = get_page_children( $usefulInfo->post_parent, $all_wp_pages );
+
+    $choices= array ();
+    foreach ($usefulInfo_children as $useful_child){
+        $choices[$useful_child->post_name] = $useful_child->post_title;
+    }
+
+
+
+    register_field_group(array (
+        'id' => 'acf_useful-information',
+        'title' => 'Useful Information',
+        'fields' => array (
+            array (
+                'key' => 'field_580a25df812b9',
+                'label' => 'Category',
+                'name' => 'category',
+                'type' => 'select',
+                'required' => 1,
+                'instructions' => 'Select Category for the post to group them together, if category doesn\'t exist add new child page to Useful Information page',
+                'choices' => $choices,
+                'default_value' => '',
+                'allow_null' => 0,
+                'multiple' => 0,
+            ),
+        ),
+        'location' => array (
+            array (
+                array (
+                    'param' => 'post_type',
+                    'operator' => '==',
+                    'value' => 'guidelines',
+                    'order_no' => 0,
+                    'group_no' => 0,
+                ),
+            ),
+        ),
+        'options' => array (
+            'position' => 'normal',
+            'layout' => 'no_box',
+            'hide_on_screen' => array (
+            ),
+        ),
+        'menu_order' => 0,
+    ));
+}
 
 
 

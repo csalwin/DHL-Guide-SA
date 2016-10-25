@@ -22,25 +22,47 @@ get_header();?>
                     $slide_title = get_sub_field('slider_title');
                     $slide_CTA = get_sub_field('slider_action_text');
                     $slide_link = get_sub_field('slider_link');
-                    ?>
-                    <div class="slide-pane">
-                        <a href="<?php echo $slide_link ?>">
-                            <img src="<?php echo $slide_image["url"]?>" alt="<?php echo $slide_image['alt']?>" title="Slider Image" onmouseover="this.title='';"/>
-                            <div class="headerBanner">
-                                <h3><?php echo $slide_title; ?></h3>
-                                <span><?php echo $slide_CTA; ?> </span>
-                            </div>
-                        </a>
 
-                    </div>
+                    if( $slide_link ) {
 
-                   <?php
+
+                        // override $post
+                        $post = $slide_link;
+                        setup_postdata($post);
+                        $category = get_field('category');
+
+                        if ($post->post_type == 'guidelines') {
+                            if ($category == 'useful-information-page') {
+                                $link = $post->guid;
+                            } else {
+                                $link = '/useful-information/' . $category . '/#' . $post->post_name;
+                            }
+                        } else {
+                            $link = $post->guid;
+                        }
+                        ?>
+                        <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
+                        <div class="slide-pane">
+                            <a href="<?php echo $link ?>">
+                                <img src="<?php echo $slide_image["url"] ?>" alt="<?php echo $slide_image['alt'] ?>"
+                                     title="Slider Image" onmouseover="this.title='';"/>
+                                <div class="headerBanner">
+                                    <h3><?php echo $slide_title; ?></h3>
+                                    <span><?php echo $slide_CTA; ?> </span>
+                                </div>
+                            </a>
+
+                        </div>
+
+                        <?php
+                    }
                 }
             }else {
 
             }
 
             ?>
+
 
         </div>
     </section>
@@ -120,25 +142,27 @@ get_header();?>
                     $post_object = get_sub_field('guideline');
                     $post_image = get_sub_field('guideline_image');
                     $post_link_text = get_sub_field('guideline_button_text');
-                    $page = get_sub_field('page');
 
                     if( $post_object ):
 
                         // override $post
                         $post = $post_object;
                         setup_postdata( $post );
+
+                        $category = get_field('category');
+
                         ?>
                         <div class="col-xs-12 col-md-4 guideline">
 
                             <div class="pageWrapper">
                                 <div class="imgWrapper">
-                                    <a href="<?php echo get_sub_field('page').'#'.$post->post_name; ?>"><img src="<?php echo $post_image['sizes']['large']?>" alt="<?php echo $post_image['alt']?>" title="<?php echo $post_image['title'] ?>"/></a>
+                                    <a href="<?php echo'/useful-information/'. $category.'/#'.$post->post_name; ?>"><img src="<?php echo $post_image['sizes']['large']?>" alt="<?php echo $post_image['alt']?>" title="<?php echo $post_image['title'] ?>"/></a>
                                 </div>
                                 <div class="textWrapper text-center">
-                                    <p><?php the_title(); ?></p>
-                                    <a href="<?php echo get_sub_field('page').'#'.$post->post_name; ?>"><?php echo $post_link_text; ?></a>
+                                    <p class="postTitle"><?php the_title(); ?></p>
+                                    <a href="<?php echo'/useful-information/'. $category.'/#'.$post->post_name; ?>"><?php echo $post_link_text; ?></a>
                                 </div>
-                                <div class="hoverOverlay"></div>
+                                <a href="<?php echo'/useful-information/'. $category.'/#'.$post->post_name; ?>"><div class="hoverOverlay"></div></a>
                             </div>
 
 
