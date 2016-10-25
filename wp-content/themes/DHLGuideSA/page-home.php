@@ -156,13 +156,13 @@ get_header();?>
 
                             <div class="pageWrapper">
                                 <div class="imgWrapper">
-                                    <a href="<?php echo'/useful-information/'. $category.'/#'.$post->post_name; ?>"><img src="<?php echo $post_image['sizes']['large']?>" alt="<?php echo $post_image['alt']?>" title="<?php echo $post_image['title'] ?>"/></a>
+                                    <a href="<?php echo $post->guid; ?>"><img src="<?php echo $post_image['sizes']['large']?>" alt="<?php echo $post_image['alt']?>" title="<?php echo $post_image['title'] ?>"/></a>
                                 </div>
                                 <div class="textWrapper text-center">
                                     <p class="postTitle"><?php the_title(); ?></p>
-                                    <a href="<?php echo'/useful-information/'. $category.'/#'.$post->post_name; ?>"><?php echo $post_link_text; ?></a>
+                                    <a href="<?php echo $post->guid; ?>"><?php echo $post_link_text; ?></a>
                                 </div>
-                                <a href="<?php echo'/useful-information/'. $category.'/#'.$post->post_name; ?>"><div class="hoverOverlay"></div></a>
+                                <a href="<?php echo $post->guid; ?>"><div class="hoverOverlay"></div></a>
                             </div>
 
 

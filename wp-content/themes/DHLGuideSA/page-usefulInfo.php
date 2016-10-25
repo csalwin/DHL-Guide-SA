@@ -38,6 +38,7 @@ get_header();?>
 
 
                 if (get_field('category') == 'useful-information-page' || get_field('category') == 'useful-information' ) {
+                    $image = get_field('thumbnail_image');
 
                     ?>
 
@@ -45,7 +46,13 @@ get_header();?>
                     <div class="col-xs-12 col-md-4 guideline">
                         <div class="pageWrapper">
                             <div class="imgWrapper">
-                                <a href="<?php echo $post->guid ?>"><?php the_post_thumbnail($post->ID, 'large') ?></a>
+                                <a href="<?php echo $post->guid ?>">
+                                    <?php if ($image){?>
+                                        <img src="<?php echo $image['url'] ?>" alt="<?php echo $image['alt']?>"/>
+                                    <?php }else {
+                                        the_post_thumbnail($post->ID, 'large');
+                                    }?>
+                                </a>
                             </div>
                             <div class="textWrapper text-center">
                                 <p><?php echo $post->post_title; ?></p>
@@ -67,16 +74,24 @@ get_header();?>
 
 
 
+            $parent = new WP_Query(array(
 
+                'post_parent'       => $post->ID,
+                'order'             => 'ASC',
+                'post_type'         => 'page',
+                'posts_per_page'    => -1
 
-            $my_wp_query = new WP_Query();
-            $all_wp_pages = $my_wp_query->query(array('post_type' => 'page'));
+            ));
+            if($parent->have_posts() ) : while ( $parent->have_posts() ) : $parent->the_post();
 
-            // Get the page as an Object
-            $page =  get_the_ID();
-
-            // Filter through all pages and find Portfolio's children
-            $pages = get_page_children( $page, $all_wp_pages );
+//            $my_wp_query = new WP_Query();
+//            $all_wp_pages = $my_wp_query->query(array('post_type' => 'page'));
+//
+//            // Get the page as an Object
+//            $page =  get_the_ID();
+//
+//            // Filter through all pages and find Portfolio's children
+//            $pages = get_page_children( $page, $all_wp_pages );
 //
 //            // Get the page as an Object
 //            $usefulInfo =  get_page_by_title('Useful Information');
@@ -90,29 +105,32 @@ get_header();?>
 //            }
 //
 //
-//            echo '<pre>' . print_r( $page , true ) . '</pre>';
+//            echo '<pre>' . print_r( $post , true ) . '</pre>';
 //            echo '<pre>' . print_r( $usefulInfo , true ) . '</pre>';
 
-            foreach ($pages as $page){
-                ?>
-                                        <div class="col-xs-12 col-md-4 guideline">
-                                            <div class="pageWrapper">
-                                                <div class="imgWrapper">
-                                                    <a href="<?php echo $page->guid ?>"><?php the_post_thumbnail($page->ID, 'large') ?></a>
-                                                </div>
-                                                <div class="textWrapper text-center">
-                                                    <p><?php echo $page->post_title; ?></p>
-                                                    <a href="<?php echo $page->guid ?>">Find out more</a>
-                                                </div>
-                                                <a href="<?php echo $page->guid ?>"><div class="hoverOverlay"></div></a>
-                                            </div>
-                                        </div>
-                                        <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
-                                    <?php
-            ?>
+            
 
+
+                $imagePage = get_field('thumbnail_image');
+
+                ?>
+                <div class="col-xs-12 col-md-4 guideline">
+                    <div class="pageWrapper">
+                        <div class="imgWrapper">
+                            <a href="<?php echo $post->guid ?>"><img src="<?php echo $imagePage['url'] ?>" alt="<?php echo $imagePage['alt']?>"/></a>
+                        </div>
+                        <div class="textWrapper text-center">
+                            <p><?php echo $post->post_title; ?></p>
+                            <a href="<?php echo $post->guid ?>">Find out more</a>
+                        </div>
+                        <a href="<?php echo $post->guid ?>"><div class="hoverOverlay"></div></a>
+                    </div>
+                </div>
+                <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
             <?php
-            }
+            endwhile;
+            endif;
+
             ?>
 
 

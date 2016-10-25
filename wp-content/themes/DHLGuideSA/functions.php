@@ -582,6 +582,9 @@ function create_post_type_guidelines()
                 'not_found' => __('No Information found', 'html5blank'),
                 'not_found_in_trash' => __('No Information found in Trash', 'html5blank')
             ),
+            'rewrite' => array(
+              'slug' => 'useful-information-post'
+            ),
             'public' => true,
             'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
             'has_archive' => true,
@@ -693,7 +696,7 @@ if(function_exists("register_field_group"))
     $all_wp_pages = $my_wp_query->query(array('post_type' => 'page'));
 
 // Get the page as an Object
-    $usefulInfo =  get_page_by_title('Useful Information');
+    $usefulInfo =  get_post(232);
 
 // Filter through all pages and find Portfolio's children
     $usefulInfo_children = get_page_children( $usefulInfo->post_parent, $all_wp_pages );
@@ -717,7 +720,7 @@ if(function_exists("register_field_group"))
                 'required' => 1,
                 'instructions' => 'Select Category for the post to group them together, if category doesn\'t exist add new child page to Useful Information page',
                 'choices' => $choices,
-                'default_value' => '',
+                'default_value' => 'Useful Information',
                 'allow_null' => 0,
                 'multiple' => 0,
             ),
