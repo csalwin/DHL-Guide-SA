@@ -4,79 +4,19 @@
  *  URL: html5blank.com | @html5blank
  *  Custom functions, support, custom post types and more.
  */
-//
-//// ----------------------------------------------------------------------------------------------------
-//// - Display Errors
-//// ----------------------------------------------------------------------------------------------------
-//ini_set('display_errors', 'On');
-//ini_set('html_errors', 0);
-//
-//// ----------------------------------------------------------------------------------------------------
-//// - Error Reporting
-//// ----------------------------------------------------------------------------------------------------
-//error_reporting(-1);
-//
-//// ----------------------------------------------------------------------------------------------------
-//// - Shutdown Handler
-//// ----------------------------------------------------------------------------------------------------
-//function ShutdownHandler()
-//{
-//    if(@is_array($error = @error_get_last()))
-//    {
-//        return(@call_user_func_array('ErrorHandler', $error));
-//    };
-//
-//    return(TRUE);
-//};
-//
-//register_shutdown_function('ShutdownHandler');
-//
-//// ----------------------------------------------------------------------------------------------------
-//// - Error Handler
-//// ----------------------------------------------------------------------------------------------------
-//function ErrorHandler($type, $message, $file, $line)
-//{
-//    $_ERRORS = Array(
-//        0x0001 => 'E_ERROR',
-//        0x0002 => 'E_WARNING',
-//        0x0004 => 'E_PARSE',
-//        0x0008 => 'E_NOTICE',
-//        0x0010 => 'E_CORE_ERROR',
-//        0x0020 => 'E_CORE_WARNING',
-//        0x0040 => 'E_COMPILE_ERROR',
-//        0x0080 => 'E_COMPILE_WARNING',
-//        0x0100 => 'E_USER_ERROR',
-//        0x0200 => 'E_USER_WARNING',
-//        0x0400 => 'E_USER_NOTICE',
-//        0x0800 => 'E_STRICT',
-//        0x1000 => 'E_RECOVERABLE_ERROR',
-//        0x2000 => 'E_DEPRECATED',
-//        0x4000 => 'E_USER_DEPRECATED'
-//    );
-//
-//    if(!@is_string($name = @array_search($type, @array_flip($_ERRORS))))
-//    {
-//        $name = 'E_UNKNOWN';
-//    };
-//
-//    return(print(@sprintf("%s Error in file \xBB%s\xAB at line %d: %s\n", $name, @basename($file), $line, $message)));
-//};
-//
-//$old_error_handler = set_error_handler("ErrorHandler");
-//
-//// other php code
-
-
-
-
-
 /*------------------------------------*\
 	External Modules/Files
 \*------------------------------------*/
 
 // Load any external files you have here
 
+// UnComment to show errors
+//require_once('functions/errors.php');
+
+
 require_once('wp_bootstrap_navwalker.php');
+
+require_once('functions/postTypes.php');
 
 /*------------------------------------*\
 	Theme Support
@@ -446,8 +386,7 @@ add_action('get_header', 'enable_threaded_comments'); // Enable Threaded Comment
 add_action('wp_enqueue_scripts', 'html5blank_styles'); // Add Theme Stylesheet
 add_action('init', 'register_html5_menu'); // Add HTML5 Blank Menu
 //add_action('init', 'create_post_type_html5'); // Add our HTML5 Blank Custom Post Type
-add_action('init', 'create_post_type_countries'); // Add Countries Custom Post Type
-add_action('init', 'create_post_type_guidelines'); // Add Guidelines Custom Post Type
+
 
 add_action('widgets_init', 'my_remove_recent_comments_style'); // Remove inline Recent Comment Styles from wp_head()
 add_action('init', 'html5wp_pagination'); // Add our HTML5 Pagination
@@ -537,84 +476,6 @@ function create_post_type_html5()
     ));
 }
 
-// Create 1 Custom Post type for a Demo, called HTML5-Blank
-function create_post_type_countries()
-{
-    register_taxonomy_for_object_type('category', 'countries'); // Register Taxonomies for Category
-    register_taxonomy_for_object_type('post_tag', 'countries');
-    register_post_type('countries', // Register Custom Post Type
-        array(
-            'labels' => array(
-                'name' => __('Shipping Countries', 'html5blank'), // Rename these to suit
-                'singular_name' => __('Shipping Country', 'html5blank'),
-                'add_new' => __('Add New', 'html5blank'),
-                'add_new_item' => __('Add New Country', 'html5blank'),
-                'edit' => __('Edit', 'html5blank'),
-                'edit_item' => __('Edit Country', 'html5blank'),
-                'new_item' => __('New Country', 'html5blank'),
-                'view' => __('View Countries', 'html5blank'),
-                'view_item' => __('View Countries Post', 'html5blank'),
-                'search_items' => __('Search Countries', 'html5blank'),
-                'not_found' => __('No Countries Posts found', 'html5blank'),
-                'not_found_in_trash' => __('No Country Posts found in Trash', 'html5blank')
-            ),
-            'public' => true,
-            'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
-            'has_archive' => true,
-            'supports' => array(
-                'title',
-                'editor',
-                'excerpt',
-                'revisions',
-                'thumbnail'
-            ), // Go to Dashboard Custom HTML5 Blank post for supports
-            'can_export' => true, // Allows export in Tools > Export
-            'taxonomies' => array(
-                'post_tag',
-                'category'
-            ) // Add Category and Post Tags support
-        ));
-}
-// Create 1 Custom Post type for a Demo, called HTML5-Blank
-function create_post_type_guidelines()
-{
-    register_taxonomy_for_object_type('category', 'guidelines'); // Register Taxonomies for Category
-    register_taxonomy_for_object_type('post_tag', 'guidelines');
-    register_post_type('guidelines', // Register Custom Post Type
-        array(
-            'labels' => array(
-                'name' => __('Useful Information', 'html5blank'), // Rename these to suit
-                'singular_name' => __('Useful Information', 'html5blank'),
-                'add_new' => __('Add New', 'html5blank'),
-                'add_new_item' => __('Add New', 'html5blanks'),
-                'edit' => __('Edit', 'html5blank'),
-                'edit_item' => __('Edit Information', 'html5blank'),
-                'new_item' => __('New Information', 'html5blank'),
-                'view' => __('View Information', 'html5blank'),
-                'view_item' => __('View Information Post', 'html5blank'),
-                'search_items' => __('Search Useful Information', 'html5blank'),
-                'not_found' => __('No Information found', 'html5blank'),
-                'not_found_in_trash' => __('No Information found in Trash', 'html5blank')
-            ),
-            'rewrite' => array(
-              'slug' => 'useful-information-post'
-            ),
-            'public' => true,
-            'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
-            'has_archive' => true,
-            'supports' => array(
-                'title',
-                'editor',
-                'revisions',
-                'thumbnail'
-            ), // Go to Dashboard Custom HTML5 Blank post for supports
-            'can_export' => true, // Allows export in Tools > Export
-            'taxonomies' => array(
-                'post_tag',
-                'category'
-            ) // Add Category and Post Tags support
-        ));
-}
 
 /*------------------------------------*\
 	ShortCode Functions
