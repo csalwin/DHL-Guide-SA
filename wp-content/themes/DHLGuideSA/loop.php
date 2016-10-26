@@ -22,7 +22,7 @@
 					if ($category == 'useful-information-page' || $category == 'useful-information') {
 						$link = $post->guid;
 					} else {
-						$link = '/useful-information/' . $category . '/#' . $post->post_name;
+						$link = get_home_url().'/useful-information/' . $category . '/#' . $post->post_name;
 					}
 				} else {
 					$link = $post->guid;
