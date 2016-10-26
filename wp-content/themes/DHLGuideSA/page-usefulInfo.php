@@ -98,13 +98,7 @@ get_header();?>
             $the_query = new WP_Query( $args );
             if($the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post();
 
-
-                if (get_field('category') == 'useful-information-page' || get_field('category') == 'useful-information' ) {
-                    $image = get_field('thumbnail_image');
-
                     ?>
-
-
                     <div class="col-xs-12 col-md-4 guideline">
                         <div class="pageWrapper">
                             <div class="imgWrapper">
@@ -128,8 +122,6 @@ get_header();?>
 
 
                     <?php
-
-                };
             endwhile;
             endif;
 

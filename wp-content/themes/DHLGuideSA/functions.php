@@ -565,45 +565,44 @@ add_filter('posts_groupby', 'atom_search_groupby');
 
 if(function_exists("register_field_group"))
 {
-//    echo '<pre>' . print_r( get_post_types(array('public'   => true,'_builtin' => false)), true ) . '</pre>';
-    $postTypes = get_post_types(array('public' => true,'_builtin' => false));
-
-    register_field_group(array (
-        'id' => 'acf_accordian-page',
-        'title' => 'Accordian Page',
-        'fields' => array (
-            array (
-                'key' => 'field_5810d3da4434b',
-                'label' => 'Post Type',
-                'name' => 'post_type',
-                'type' => 'select',
-                'choices' => array (
-                   $postTypes
-                ),
-                'default_value' => '',
-                'multiple' => 0,
-                'allow_null' => 0,
-            ),
-        ),
-        'location' => array (
-            array (
+    add_action('wp_loaded', function(){
+        $post_types = get_post_types( array( 'public' => true, '_builtin' => false ), 'names' );
+        register_field_group(array (
+            'id' => 'acf_accordian-page',
+            'title' => 'Accordian Page',
+            'fields' => array (
                 array (
-                    'param' => 'page_template',
-                    'operator' => '==',
-                    'value' => 'page-accordian.php',
-                    'order_no' => 0,
-                    'group_no' => 0,
+                    'key' => 'field_5810d3da4434b',
+                    'label' => 'Post Type',
+                    'name' => 'post_type',
+                    'type' => 'select',
+                    'choices' => $post_types,
+                    'default_value' => '',
+                    'multiple' => 0,
+                    'allow_null' => 0,
                 ),
             ),
-        ),
-        'options' => array (
-            'position' => 'normal',
-            'layout' => 'no_box',
-            'hide_on_screen' => array (
+            'location' => array (
+                array (
+                    array (
+                        'param' => 'page_template',
+                        'operator' => '==',
+                        'value' => 'page-accordian.php',
+                        'order_no' => 0,
+                        'group_no' => 0,
+                    ),
+                ),
             ),
-        ),
-        'menu_order' => 0,
-    ));
+            'options' => array (
+                'position' => 'normal',
+                'layout' => 'no_box',
+                'hide_on_screen' => array (
+                ),
+            ),
+            'menu_order' => 0,
+        ));
+    });
+
 
 }
 

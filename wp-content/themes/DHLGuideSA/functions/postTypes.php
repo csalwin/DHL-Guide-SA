@@ -92,9 +92,9 @@ function create_post_type_guidelines()
 }
 function create_post_type_Customs_Terminology()
 {
-    register_taxonomy_for_object_type('category', 'customs'); // Register Taxonomies for Category
-    register_taxonomy_for_object_type('post_tag', 'customs');
-    register_post_type('custom', // Register Custom Post Type
+    register_taxonomy_for_object_type('category', 'customs_terminology'); // Register Taxonomies for Category
+    register_taxonomy_for_object_type('post_tag', 'customs_terminology');
+    register_post_type('customs_terminology', // Register Custom Post Type
         array(
             'labels' => array(
                 'name' => __('Customs Terminology', 'html5blank'), // Rename these to suit
@@ -111,7 +111,7 @@ function create_post_type_Customs_Terminology()
                 'not_found_in_trash' => __('No Terminology found in Trash', 'html5blank')
             ),
             'rewrite' => array(
-                'slug' => 'custom-terminology'
+                'slug' => 'customs-terminology'
             ),
             'public' => true,
             'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages

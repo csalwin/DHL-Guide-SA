@@ -50,42 +50,40 @@
 
 					$numPosts = 0;
 
-						while ($my_query->have_posts()) : $my_query->the_post();
-							if ($numPosts < 3) {
-								if (get_field('category') == 'useful-information-page' || get_field('category') == 'useful-information' ) {
-									$numPosts++;
-									$image = get_field('thumbnail_image');
-									?>
-									<div class="col-xs-12 col-md-4 guideline">
-										<div class="pageWrapper">
-											<div class="imgWrapper">
-												<a href="<?php echo $post->guid ?>">
-													<?php if ($image){?>
-														<img src="<?php echo $image['url'] ?>" alt="<?php echo $image['alt']?>"/>
-													<?php }else {
-														the_post_thumbnail($post->ID, 'large');
-													}?>
-                                        </a>
-											</div>
-											<div class="textWrapper text-center">
-												<p><?php echo $post->post_title; ?></p>
-												<a href="<?php echo $post->guid ?>">Find out more</a>
-											</div>
-											<a href="<?php echo $post->guid ?>">
-												<div class="hoverOverlay"></div>
-											</a>
-										</div>
+					while ($my_query->have_posts()) : $my_query->the_post();
+						if ($numPosts < 3) {
+							$numPosts++;
+							$image = get_field('thumbnail_image');
+							?>
+							<div class="col-xs-12 col-md-4 guideline">
+								<div class="pageWrapper">
+									<div class="imgWrapper">
+										<a href="<?php echo $post->guid ?>">
+											<?php if ($image) { ?>
+												<img src="<?php echo $image['url'] ?>"
+													 alt="<?php echo $image['alt'] ?>"/>
+											<?php } else {
+												the_post_thumbnail($post->ID, 'large');
+											} ?>
+										</a>
 									</div>
+									<div class="textWrapper text-center">
+										<p><?php echo $post->post_title; ?></p>
+										<a href="<?php echo $post->guid ?>">Find out more</a>
+									</div>
+									<a href="<?php echo $post->guid ?>">
+										<div class="hoverOverlay"></div>
+									</a>
+								</div>
+							</div>
 
 
-									<?php
-								}
-							}
-						endwhile;
+							<?php
 
+						}
+					endwhile;
+					wp_reset_query();
 				}
-				wp_reset_query();
-
 
 ?>
 

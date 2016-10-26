@@ -31,9 +31,13 @@ get_header();
             <?php
 
             $pageSlug = $post;
-
+            if (get_field('post_type')) {
+                $post_type = get_field('post_type');
+            }else {
+                $post_type = 'guidelines';
+            }
             $args = array(
-                'post_type'=> 'guidelines',
+                'post_type'=> $post_type,
                 'order'    => 'ASC',
                 'posts_per_page'    => -1
             );
@@ -41,24 +45,8 @@ get_header();
             $the_query = new WP_Query( $args );
             if($the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post();
 
-                if (get_field('category') == $pageSlug->post_name) {
 
-                    if (get_field('category') == 'useful-information-page') {?>
 
-                        <div class="col-xs-12 col-md-4 guideline">
-                            <div class="pageWrapper">
-                                <div class="imgWrapper">
-                                    <a href="<?php echo $post->guid ?>"><?php the_post_thumbnail($post->ID, 'large') ?></a>
-                                </div>
-                                <div class="textWrapper text-center">
-                                    <p><?php echo $post->post_title; ?></p>
-                                    <a href="<?php echo $post->guid ?>">Find out more</a>
-                                </div>
-                                <a href="<?php echo $post->guid ?>"><div class="hoverOverlay"></div></a>
-                            </div>
-                        </div>
-                        <?php
-                    }else {
 
 //            // check if the repeater field has rows of data
 //            if( have_rows('list_of_posts') ):
@@ -94,8 +82,6 @@ get_header();
                         </div>
 
                         <?php
-                    }
-                };
 
             endwhile;
 

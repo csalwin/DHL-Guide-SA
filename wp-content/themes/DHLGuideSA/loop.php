@@ -16,17 +16,13 @@
 		<!-- post title -->
 		<h2>
 			<?php
-				$category = get_field('category');
 
-				if ($post->post_type == 'guidelines') {
-					if ($category == 'useful-information-page' || $category == 'useful-information') {
-						$link = $post->guid;
-					} else {
-						$link = get_home_url().'/useful-information/' . $category . '/#' . $post->post_name;
-					}
-				} else {
+				if ($post->post_type == 'guidelines' || $post->post_type == 'countries') {
 					$link = $post->guid;
+				} else {
+					$link = get_home_url().'/useful-information/' . $post->post_type . '/#' . $post->post_name;
 				}
+
 			?>
 			<a href="<?php echo $link ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
 		</h2>
