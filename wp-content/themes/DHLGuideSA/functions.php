@@ -308,7 +308,7 @@ function html5wp_index($length) // Create 20 Word Callback for Index page Excerp
 // Create 40 Word Callback for Custom Post Excerpts, call using html5wp_excerpt('html5wp_custom_post');
 function html5wp_custom_post($length)
 {
-    return 40;
+    return $length;
 }
 
 // Create the Custom Excerpts callback
@@ -327,12 +327,26 @@ function html5wp_excerpt($length_callback = '', $more_callback = '')
     $output = '<p>' . $output . '</p>';
     echo $output;
 }
+function moreCallback () {
+    return false;
+}
 
 // Custom View Article link to Post
 function html5_blank_view_article($more)
 {
     global $post;
-    return '... <a class="view-article" href="' . get_permalink($post->ID) . '">' . __('View Article', 'html5blank') . '</a>';
+    $category = get_field('category');
+
+    if ($post->post_type == 'guidelines') {
+        if ($category == 'useful-information-page' || $category == 'useful-information') {
+            $link = $post->guid;
+        } else {
+            $link = '/useful-information/' . $category . '/#' . $post->post_name;
+        }
+    } else {
+        $link = $post->guid;
+    }
+    return '... <a class="view-article" href="' . $link . '">' . __('View Article', 'html5blank') . '</a>';
 }
 
 // Remove Admin bar

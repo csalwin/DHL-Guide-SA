@@ -32,7 +32,7 @@ get_header();?>
                         $category = get_field('category');
 
                         if ($post->post_type == 'guidelines') {
-                            if ($category == 'useful-information-page') {
+                            if ($category == 'useful-information-page' || $category == 'useful-information') {
                                 $link = $post->guid;
                             } else {
                                 $link = '/useful-information/' . $category . '/#' . $post->post_name;
@@ -152,11 +152,18 @@ get_header();?>
                         $category = get_field('category');
 
                         ?>
-                        <div class="col-xs-12 col-md-4 guideline">
+                        <div class="col-xs-12 col-sm-4 guideline">
 
                             <div class="pageWrapper">
                                 <div class="imgWrapper">
-                                    <a href="<?php echo $post->guid; ?>"><img src="<?php echo $post_image['sizes']['large']?>" alt="<?php echo $post_image['alt']?>" title="<?php echo $post_image['title'] ?>"/></a>
+                                    <a href="<?php echo $post->guid; ?>">
+                                        <?php
+                                        $postImage = get_field('thumbnail_image');
+
+//                                        the_post_thumbnail($post->ID, 'large')
+                                        ?>
+                                        <img src="<?php echo $postImage['url'] ?>" alt="<?php echo $postImage['alt']?>"/>
+<!--                                        <img src="--><?php //echo $post_image['sizes']['large']?><!--" alt="--><?php //echo $post_image['alt']?><!--" title="--><?php //echo $post_image['title'] ?><!--"/></a>-->
                                 </div>
                                 <div class="textWrapper text-center">
                                     <p class="postTitle"><?php the_title(); ?></p>

@@ -41,8 +41,11 @@ body {
   body hr {
     border-top: 1px solid #dbdbdb; }
 
-h1, h2, h3, h4, h5, p {
+h1, h2, h3, h4, h5 {
   color: #444444; }
+
+p {
+  color: #252525; }
 
 a {
   color: #d40511; }
@@ -69,26 +72,33 @@ strong {
     position: relative;
     border: 1px solid #dbdbdb;
     margin-bottom: 25px;
-    -webkit-box-shadow: 0px 5px 20px -2px rgba(50, 50, 50, 0.77);
-    -moz-box-shadow: 0px 5px 20px -2px rgba(50, 50, 50, 0.77);
-    box-shadow: 0px 5px 20px -2px rgba(50, 50, 50, 0.77); }
+    -webkit-box-shadow: 2px 2px 8px -2px #9a9a9a;
+    -moz-box-shadow: 2px 2px 8px -2px #9a9a9a;
+    box-shadow: 2px 2px 8px -2px #9a9a9a; }
     .guideline .pageWrapper .imgWrapper {
       width: 100%;
       max-height: 150px;
       overflow: hidden;
       display: block; }
       .guideline .pageWrapper .imgWrapper img {
+        text-align: center;
         display: block;
-        width: 100%;
-        min-height: 150px; }
+        width: auto;
+        max-width: 100%;
+        max-height: 249px; }
     .guideline .pageWrapper .textWrapper {
       padding: 15px 0; }
-    .guideline .pageWrapper:hover {
-      -webkit-box-shadow: 0px 5px 20px -2px rgba(50, 50, 50, 0.17);
-      -moz-box-shadow: 0px 5px 20px -2px rgba(50, 50, 50, 0.17);
-      box-shadow: 0px 5px 20px -2px rgba(50, 50, 50, 0.17); }
-      .guideline .pageWrapper:hover .hoverOverlay {
-        display: block; }
+    @media only screen and (min-width: 768px) {
+      .guideline .pageWrapper:hover, .guideline .pageWrapper:focus {
+        -webkit-box-shadow: 2px 2px 8px -2px rgba(50, 50, 50, 0.17);
+        -moz-box-shadow: 2px 2px 8px -2px rgba(50, 50, 50, 0.17);
+        box-shadow: 2px px 8px -2px rgba(50, 50, 50, 0.17); }
+        .guideline .pageWrapper:hover .hoverOverlay, .guideline .pageWrapper:focus .hoverOverlay {
+          display: block; } }
+
+.pageCopy {
+  width: 94%;
+  margin: 0 auto; }
 
 body {
   -webkit-transition: transform 0.3s;
@@ -438,17 +448,17 @@ body {
         display: block; }
         .pageHome section.countriesBar .countryWrapper a img {
           width: 100%;
-          -webkit-box-shadow: 0px 5px 20px -2px rgba(50, 50, 50, 0.77);
-          -moz-box-shadow: 0px 5px 20px -2px rgba(50, 50, 50, 0.77);
-          box-shadow: 0px 5px 20px -2px rgba(50, 50, 50, 0.77); }
-        .pageHome section.countriesBar .countryWrapper a:hover .hoverOverlay {
-          display: block; }
-        .pageHome section.countriesBar .countryWrapper a:hover img {
-          -webkit-box-shadow: 0px 5px 20px -2px rgba(50, 50, 50, 0.17);
-          -moz-box-shadow: 0px 5px 20px -2px rgba(50, 50, 50, 0.17);
-          box-shadow: 0px 5px 20px -2px rgba(50, 50, 50, 0.17); }
-  .pageHome section.guidelines .guideline .textWrapper p.postTitle {
-    min-height: 40px; }
+          -webkit-box-shadow: 2px 2px 8px -2px #9a9a9a;
+          -moz-box-shadow: 2px 2px 8px -2px #9a9a9a;
+          box-shadow: 2px 2px 8px -2px #9a9a9a; }
+        @media only screen and (min-width: 768px) {
+          .pageHome section.countriesBar .countryWrapper a:hover .hoverOverlay, .pageHome section.countriesBar .countryWrapper a:focus .hoverOverlay {
+            cursor: pointer;
+            display: block; }
+          .pageHome section.countriesBar .countryWrapper a:hover img, .pageHome section.countriesBar .countryWrapper a:focus img {
+            -webkit-box-shadow: 2px 2px 8px -2px rgba(50, 50, 50, 0.17);
+            -moz-box-shadow: 2px 2px 8px -2px rgba(50, 50, 50, 0.17);
+            box-shadow: 2px px 8px -2px rgba(50, 50, 50, 0.17); } }
   .pageHome section.guidelines .guideline .textWrapper a {
     color: #d40511; }
 
@@ -500,9 +510,9 @@ body {
       padding: 10px 150px; } }
 .usefulInfo section.accordian .panel-group {
   border: 1px solid #6f6f6f;
-  -webkit-box-shadow: 0px 5px 20px -2px rgba(50, 50, 50, 0.77);
-  -moz-box-shadow: 0px 5px 20px -2px rgba(50, 50, 50, 0.77);
-  box-shadow: 0px 5px 20px -2px rgba(50, 50, 50, 0.77); }
+  -webkit-box-shadow: 2px 2px 8px -2px #9a9a9a;
+  -moz-box-shadow: 2px 2px 8px -2px #9a9a9a;
+  box-shadow: 2px 2px 8px -2px #9a9a9a; }
   .usefulInfo section.accordian .panel-group .panel {
     background: none;
     border: none;
@@ -549,8 +559,18 @@ body {
 .usefulInfo section.information .guideline .textWrapper p {
   min-height: 40px; }
 
-.singleGuidelines .postContent .postTitle {
-  text-transform: uppercase; }
+.singleGuidelines .postContent {
+  width: 94%;
+  margin: 0 auto; }
+  .singleGuidelines .postContent .postTitle {
+    text-transform: uppercase; }
+
+.search .postContent {
+  width: 94%;
+  margin: 0 auto;
+  display: block; }
+.search article h2 {
+  font-size: 20px; }
 
 footer {
   position: relative;
@@ -632,31 +652,12 @@ footer {
       float: right;
       /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#d40511+0,b00e01+100 */
       background: #d40511;
-      /* Old browsers */
-      background: -moz-linear-gradient(top, #d40511 0%, #b00e01 100%);
-      /* FF3.6-15 */
-      background: -webkit-linear-gradient(top, #d40511 0%, #b00e01 100%);
-      /* Chrome10-25,Safari5.1-6 */
-      background: linear-gradient(to bottom, #d40511 0%, #b00e01 100%);
-      /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d40511', endColorstr='#b00e01',GradientType=0 );
-      /* IE6-9 */
-      -webkit-box-shadow: 0px 2px 9px 0px rgba(50, 50, 50, 0.45);
-      -moz-box-shadow: 0px 2px 9px 0px rgba(50, 50, 50, 0.45);
-      box-shadow: 0px 2px 9px 0px rgba(50, 50, 50, 0.45);
-      border-radius: 0; }
+      border: 3px solid #d40511;
+      border-radius: 0;
+      padding: 3px 10px; }
       .modal .modal-content form input[type="submit"]:hover {
-        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#bf0508+0,660101+100 */
-        background: #bf0508;
-        /* Old browsers */
-        background: -moz-linear-gradient(top, #bf0508 0%, #660101 100%);
-        /* FF3.6-15 */
-        background: -webkit-linear-gradient(top, #bf0508 0%, #660101 100%);
-        /* Chrome10-25,Safari5.1-6 */
-        background: linear-gradient(to bottom, #bf0508 0%, #660101 100%);
-        /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bf0508', endColorstr='#660101',GradientType=0 );
-        /* IE6-9 */ }
+        color: #252525;
+        background: none; }
     .modal .modal-content form img {
       width: auto; }
 
