@@ -39,6 +39,9 @@
                 text-transform: uppercase;
                 color: #ffffff;
                 top: 40%;
+                -webkit-transform: translateY(-40%);
+                -moz-transform: translateY(-40%);
+                -o-transform: translateY(-40%);
                 transform: translateY(-40%);
                 left: 8%;
               @include tablet {
@@ -66,7 +69,7 @@
                   font-weight: normal;
                   font-size: 15px;
                   @include tablet {
-                    font-size: 40px;
+                    font-size: 30px;
                   }
                 }
 
@@ -92,26 +95,21 @@
           position: relative;
           display: block;
 
-          .hoverOverlay {
-            display: none;
-            top: 0;
-            left: 0;
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: rgba(50, 50, 50, 0.3);
-          }
+
           img {
             width: 100%;
             @include shadow('');
 
           }
-          &:hover {
-            .hoverOverlay {
-              display: block;
-            }
-            img {
-              @include shadow(rgba(50, 50, 50, 0.17));
+          @include tablet (){
+            &:hover, &:focus {
+              .hoverOverlay {
+                cursor: pointer;
+                display: block;
+              }
+              img {
+                @include shadow(rgba(50, 50, 50, 0.17));
+              }
             }
 
           }
@@ -119,35 +117,17 @@
       }
     }
     &.guidelines {
-
-
       .guideline {
-        margin-top: 20px;
-        .pageWrapper {
-
-          border: 1px solid #dbdbdb;
-          margin-bottom: 25px;
-          @include shadow('');
-
-          .imgWrapper {
-            width: 100%;
-            max-height: 150px;
-            overflow: hidden;
-            display: block;
-            img  {
-              display: block;
-              width: 100%;
-              min-height: 150px;
-            }
-
-
+        .textWrapper {
+          p.postTitle {
+            //min-height: 40px;
           }
-
-          .textWrapper {
-            padding: 15px 0;
+          a {
+            color: $dhlRed;
           }
         }
       }
+
     }
   }
 }

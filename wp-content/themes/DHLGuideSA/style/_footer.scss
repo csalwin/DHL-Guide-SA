@@ -106,27 +106,15 @@ footer {
         width: 100px;
         float: right;
         /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#d40511+0,b00e01+100 */
-        background: rgb(212,5,17); /* Old browsers */
-        background: -moz-linear-gradient(top,  rgba(212,5,17,1) 0%, rgba(176,14,1,1) 100%); /* FF3.6-15 */
-        background: -webkit-linear-gradient(top,  rgba(212,5,17,1) 0%,rgba(176,14,1,1) 100%); /* Chrome10-25,Safari5.1-6 */
-        background: linear-gradient(to bottom,  rgba(212,5,17,1) 0%,rgba(176,14,1,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d40511', endColorstr='#b00e01',GradientType=0 ); /* IE6-9 */
-
-
-        -webkit-box-shadow: 0px 2px 9px 0px rgba(50, 50, 50, 0.45);
-        -moz-box-shadow:    0px 2px 9px 0px rgba(50, 50, 50, 0.45);
-        box-shadow:         0px 2px 9px 0px rgba(50, 50, 50, 0.45);
-
+        background: $dhlRed;
+        border: 3px solid $dhlRed;
         border-radius: 0;
+        padding: 3px 10px;
 
         &:hover {
+          color: $fontColor;
+          background: none;
 
-          /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#bf0508+0,660101+100 */
-          background: rgb(191,5,8); /* Old browsers */
-          background: -moz-linear-gradient(top,  rgba(191,5,8,1) 0%, rgba(102,1,1,1) 100%); /* FF3.6-15 */
-          background: -webkit-linear-gradient(top,  rgba(191,5,8,1) 0%,rgba(102,1,1,1) 100%); /* Chrome10-25,Safari5.1-6 */
-          background: linear-gradient(to bottom,  rgba(191,5,8,1) 0%,rgba(102,1,1,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-          filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bf0508', endColorstr='#660101',GradientType=0 ); /* IE6-9 */
 
         }
       }

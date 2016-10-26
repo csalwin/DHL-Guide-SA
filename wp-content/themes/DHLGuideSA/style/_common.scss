@@ -182,8 +182,10 @@ strong {
       img  {
         text-align: center;
         display: block;
-        width: 100%;
-        min-height: 150px;
+        width: auto;
+        max-width: 100%;
+        //min-height: 150px;
+        max-height: 249px;
       }
     }
     .textWrapper {
@@ -201,3 +203,7 @@ strong {
 }
 
 
+.pageCopy {
+  width: 94%;
+  margin: 0 auto;
+}
