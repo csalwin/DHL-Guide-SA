@@ -61,7 +61,7 @@ get_header();?>
                 //
                 //
                 //            echo '<pre>' . print_r( $post , true ) . '</pre>';
-                //            echo '<pre>' . print_r( $usefulInfo , true ) . '</pre>';
+//                            echo '<pre>' . print_r( get_post_types(array('public'   => true,'_builtin' => false)), true ) . '</pre>';
 
 
 

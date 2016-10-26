@@ -8,6 +8,8 @@
 
 add_action('init', 'create_post_type_countries'); // Add Countries Custom Post Type
 add_action('init', 'create_post_type_guidelines'); // Add Guidelines Custom Post Type
+add_action('init', 'create_post_type_Customs_Terminology'); // Add Customs Terminology Custom Post Type
+add_action('init', 'create_post_type_FAQ'); // Add FAQ Custom Post Type
 
 
 // Create 1 Custom Post type for a Demo, called HTML5-Blank
@@ -71,6 +73,84 @@ function create_post_type_guidelines()
             ),
             'rewrite' => array(
                 'slug' => 'useful-information-post'
+            ),
+            'public' => true,
+            'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
+            'has_archive' => true,
+            'supports' => array(
+                'title',
+                'editor',
+                'revisions',
+                'thumbnail'
+            ), // Go to Dashboard Custom HTML5 Blank post for supports
+            'can_export' => true, // Allows export in Tools > Export
+            'taxonomies' => array(
+                'post_tag',
+                'category'
+            ) // Add Category and Post Tags support
+        ));
+}
+function create_post_type_Customs_Terminology()
+{
+    register_taxonomy_for_object_type('category', 'customs'); // Register Taxonomies for Category
+    register_taxonomy_for_object_type('post_tag', 'customs');
+    register_post_type('custom', // Register Custom Post Type
+        array(
+            'labels' => array(
+                'name' => __('Customs Terminology', 'html5blank'), // Rename these to suit
+                'singular_name' => __('Customs Terminology', 'html5blank'),
+                'add_new' => __('Add New', 'html5blank'),
+                'add_new_item' => __('Add New', 'html5blanks'),
+                'edit' => __('Edit', 'html5blank'),
+                'edit_item' => __('Edit Information', 'html5blank'),
+                'new_item' => __('New Customs Terminology', 'html5blank'),
+                'view' => __('View Post', 'html5blank'),
+                'view_item' => __('View Post', 'html5blank'),
+                'search_items' => __('Search Customs Terminology', 'html5blank'),
+                'not_found' => __('No Terminology found', 'html5blank'),
+                'not_found_in_trash' => __('No Terminology found in Trash', 'html5blank')
+            ),
+            'rewrite' => array(
+                'slug' => 'custom-terminology'
+            ),
+            'public' => true,
+            'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
+            'has_archive' => true,
+            'supports' => array(
+                'title',
+                'editor',
+                'revisions',
+                'thumbnail'
+            ), // Go to Dashboard Custom HTML5 Blank post for supports
+            'can_export' => true, // Allows export in Tools > Export
+            'taxonomies' => array(
+                'post_tag',
+                'category'
+            ) // Add Category and Post Tags support
+        ));
+}
+function create_post_type_FAQ()
+{
+    register_taxonomy_for_object_type('category', 'faq'); // Register Taxonomies for Category
+    register_taxonomy_for_object_type('post_tag', 'faq');
+    register_post_type('faq', // Register Custom Post Type
+        array(
+            'labels' => array(
+                'name' => __('FAQ', 'html5blank'), // Rename these to suit
+                'singular_name' => __('FAQ', 'html5blank'),
+                'add_new' => __('Add New', 'html5blank'),
+                'add_new_item' => __('Add New', 'html5blanks'),
+                'edit' => __('Edit', 'html5blank'),
+                'edit_item' => __('Edit FAQ', 'html5blank'),
+                'new_item' => __('New FAQ', 'html5blank'),
+                'view' => __('View Post', 'html5blank'),
+                'view_item' => __('View Post', 'html5blank'),
+                'search_items' => __('Search FAQs', 'html5blank'),
+                'not_found' => __('No FAQ found', 'html5blank'),
+                'not_found_in_trash' => __('No FAQ found in Trash', 'html5blank')
+            ),
+            'rewrite' => array(
+                'slug' => 'faq'
             ),
             'public' => true,
             'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages

@@ -563,49 +563,34 @@ add_filter('posts_groupby', 'atom_search_groupby');
 
 
 
-// Add custom field to useful information
 if(function_exists("register_field_group"))
 {
-    // Set up the objects needed
-    $my_wp_query = new WP_Query();
-    $all_wp_pages = $my_wp_query->query(array('post_type' => 'page'));
-
-// Get the page as an Object
-    $usefulInfo =  get_post(232);
-
-// Filter through all pages and find Portfolio's children
-    $usefulInfo_children = get_page_children( $usefulInfo->post_parent, $all_wp_pages );
-
-    $choices= array ();
-    foreach ($usefulInfo_children as $useful_child){
-        $choices[$useful_child->post_name] = $useful_child->post_title;
-    }
-
-
+//    echo '<pre>' . print_r( get_post_types(array('public'   => true,'_builtin' => false)), true ) . '</pre>';
+    $postTypes = get_post_types(array('public' => true,'_builtin' => false));
 
     register_field_group(array (
-        'id' => 'acf_useful-information',
-        'title' => 'Useful Information',
+        'id' => 'acf_accordian-page',
+        'title' => 'Accordian Page',
         'fields' => array (
             array (
-                'key' => 'field_580a25df812b9',
-                'label' => 'Category',
-                'name' => 'category',
+                'key' => 'field_5810d3da4434b',
+                'label' => 'Post Type',
+                'name' => 'post_type',
                 'type' => 'select',
-                'required' => 1,
-                'instructions' => 'Select Category for the post to group them together, if category doesn\'t exist add new child page to Useful Information page',
-                'choices' => $choices,
-                'default_value' => 'Useful Information',
-                'allow_null' => 0,
+                'choices' => array (
+                   $postTypes
+                ),
+                'default_value' => '',
                 'multiple' => 0,
+                'allow_null' => 0,
             ),
         ),
         'location' => array (
             array (
                 array (
-                    'param' => 'post_type',
+                    'param' => 'page_template',
                     'operator' => '==',
-                    'value' => 'guidelines',
+                    'value' => 'page-accordian.php',
                     'order_no' => 0,
                     'group_no' => 0,
                 ),
@@ -619,7 +604,9 @@ if(function_exists("register_field_group"))
         ),
         'menu_order' => 0,
     ));
+
 }
+
 
 
 
