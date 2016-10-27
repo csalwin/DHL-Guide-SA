@@ -117,9 +117,15 @@ body {
     overflow: hidden; }
     @media only screen and (min-width: 768px) {
       body.mobileshowsidebar {
+        -webkit-transform: translateX(0%);
+        -moz-transform: translateX(0%);
+        -o-transform: translateX(0%);
         transform: translateX(0%); } }
     @media only screen and (min-width: 1200px) {
       body.mobileshowsidebar {
+        -webkit-transform: translateX(0%);
+        -moz-transform: translateX(0%);
+        -o-transform: translateX(0%);
         transform: translateX(0%); } }
   body .headerContainer {
     padding-left: 0;
@@ -182,6 +188,9 @@ body {
               width: 2px;
               float: left;
               margin: 0 2px;
+              -webkit-transition: transform .3s, background-color .3s;
+              -moz-transition: transform .3s, background-color .3s;
+              -o-transition: transform .3s, background-color .3s;
               transition: transform .3s, background-color .3s; }
               body .headerContainer .header .headerWrapper .navbar .navbar-toggle span.icon-bar.transparent {
                 display: none; }
@@ -205,6 +214,9 @@ body {
                 height: 2px;
                 float: none;
                 margin: 4px 0;
+                -webkit-transition: transform .3s, background-color .3s;
+                -moz-transition: transform .3s, background-color .3s;
+                -o-transition: transform .3s, background-color .3s;
                 transition: transform .3s, background-color .3s; }
                 body .headerContainer .header .headerWrapper .navbar .navbar-toggle.collapsed span.icon-bar.transparent {
                   display: block; }
@@ -234,7 +246,10 @@ body {
             position: absolute;
             top: -30px;
             padding: 20px;
-            right: -335px;
+            right: -86%;
+            -webkit-transition: transform .3s;
+            -moz-transition: transform .3s;
+            -o-transition: transform .3s;
             transition: transform .3s;
             width: 80%;
             max-width: 280px;
