@@ -190,14 +190,14 @@ strong {
     .textWrapper {
       padding: 15px 0;
     }
-    @include tablet() {
+
       &:hover, &:focus {
         .hoverOverlay {
           display: block;
         }
         @include shadow(rgba(50, 50, 50, 0.17));
       }
-    }
+
   }
 }
 
