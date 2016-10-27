@@ -75,6 +75,31 @@
 
         }
 
+        // tablet "one touch (click)" X "hover" > link redirection
+        $('a').on('touchmove touchend', function(e) {
+
+            // if touchmove>touchend, set the data() for this element to true. then leave touchmove & let touchend fail(data=true) redirection
+            if (e.type == 'touchmove') {
+                $.data(this, "touchmove_cancel_redirection", true );
+                return;
+            }
+
+            // if it's a simple touchend, data() for this element doesn't exist.
+            if (e.type == 'touchend' && !$.data(this, "touchmove_cancel_redirection")) {
+                var el = $(this);
+                var link = el.attr('href');
+                if (el.target == '_blank'){
+                    window.open(link, '_blank').focus();
+                }else{
+                    window.location = link;
+                }
+
+            }
+
+            // if touchmove>touchend, to be redirected on a future simple touchend for this element
+            $.data(this, "touchmove_cancel_redirection", false );
+        });
+
 	});
 
     //TODO add this to the line to check if its already shown

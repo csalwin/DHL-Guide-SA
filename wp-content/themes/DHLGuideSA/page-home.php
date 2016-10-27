@@ -31,14 +31,10 @@ get_header();?>
                         setup_postdata($post);
                         $category = get_field('category');
 
-                        if ($post->post_type == 'guidelines') {
-                            if ($category == 'useful-information-page' || $category == 'useful-information') {
-                                $link = $post->guid;
-                            } else {
-                                $link = get_home_url().'/useful-information/' . $category . '/#' . $post->post_name;
-                            }
-                        } else {
+                        if ($post->post_type == 'guidelines' || $post->post_type == 'countries') {
                             $link = $post->guid;
+                        } else {
+                            $link = get_home_url().'/useful-information/' . $post->post_type . '/#' . $post->post_name;
                         }
                         ?>
                         <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
