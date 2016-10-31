@@ -1,11 +1,14 @@
 <?php get_header(); ?>
 
-	<main role="main">
+	<div class="container content noFound">
+		<section class="row headerslider">
+			<img src="<?php echo get_template_directory_uri() ?>/img/banners/usefulinformation.jpg">
+		</section>
 		<!-- section -->
-		<section>
+		<section class="row">
 
 			<!-- article -->
-			<article id="post-404">
+			<article id="post-404" class="text-center">
 
 				<h1><?php _e( 'Page not found', 'html5blank' ); ?></h1>
 				<h2>
@@ -17,8 +20,6 @@
 
 		</section>
 		<!-- /section -->
-	</main>
-
-<?php get_sidebar(); ?>
+	</div>
 
 <?php get_footer(); ?>
