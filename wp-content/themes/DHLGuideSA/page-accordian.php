@@ -38,6 +38,7 @@ get_header();
             }
             $args = array(
                 'post_type'=> $post_type,
+                'orderby'=> 'title',
                 'order'    => 'ASC',
                 'posts_per_page'    => -1
             );

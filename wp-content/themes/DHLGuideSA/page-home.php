@@ -34,24 +34,40 @@ get_header();?>
                         if ($post->post_type == 'guidelines' || $post->post_type == 'countries') {
                             $link = $post->guid;
                         } else {
-                            $link = get_home_url().'/useful-information/' . $post->post_type . '/#' . $post->post_name;
+                            $link = get_home_url() . '/useful-information/' . $post->post_type . '/#' . $post->post_name;
                         }
+                    }else {
+                        $link = '';
+                    }
                         ?>
                         <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
                         <div class="slide-pane">
+                            <?php if( $slide_link ) {?>
                             <a href="<?php echo $link ?>">
+
                                 <img src="<?php echo $slide_image["url"] ?>" alt="<?php echo $slide_image['alt'] ?>"
                                      title="Slider Image" onmouseover="this.title='';"/>
                                 <div class="headerBanner">
-                                    <h3><?php echo $slide_title; ?></h3>
-                                    <span><?php echo $slide_CTA; ?> </span>
+                                    <h3 class="noselect"><?php echo $slide_title; ?></h3>
+                                    <span class="noselect"><?php echo $slide_CTA; ?> </span>
                                 </div>
                             </a>
+                            <?php }else {?>
+                                <img src="<?php echo $slide_image["url"] ?>" alt="<?php echo $slide_image['alt'] ?>"
+                                     title="Slider Image" onmouseover="this.title='';"/>
+                                <div class="headerBanner">
+                                    <h3 class="noselect"><?php echo $slide_title; ?></h3>
+                                    <span class="noselect"><?php echo $slide_CTA; ?> </span>
+                                </div>
+
+
+
+                          <?php  } ?>
 
                         </div>
 
                         <?php
-                    }
+
                 }
             }else {
 
