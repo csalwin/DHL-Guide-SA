@@ -359,12 +359,18 @@ body {
                       filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
 
                     }
+                    &.double-width {
+                      .dropdown-menu {
+                        width: 200%;
+                      }
+                    }
                     .dropdown-menu {
                       left: 0;
                       right: auto;
                       top: 98%;
                       border: none;
                       min-width: 100%;
+
 
                       ul {
                         li {

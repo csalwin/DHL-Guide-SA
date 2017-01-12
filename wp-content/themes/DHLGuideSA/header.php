@@ -70,7 +70,7 @@
 							<div class="searchFormContainer">
 								<?php get_search_form()?>
 							</div>
-							<?php html5blank_nav(); ?>
+							<?php add_menu_parent_class(html5blank_nav()); ?>
 						</div>
 
 					</nav>

@@ -94,6 +94,58 @@ function html5blank_nav()
 	);
 }
 
+
+//This function is responsible for adding "my-parent-item" class to parent menu item's
+function add_menu_parent_class( $items ) {
+
+    $count = 0;
+    $parents = array();
+    foreach ( $items as $item ) {
+//        echo "<pre>". print_r(in_array($item->classes, 'menu-item-has-children'), true). "</pre>";
+
+
+        //Check if the item is a parent item
+        if ( $item->menu_item_parent && $item->menu_item_parent > 0 ) {
+            $count ++;
+        }
+    }
+    if ($count > 8){
+        foreach ( $items as $item ) {
+//            echo '<pre>'.print_r($item->classes, true).'</pre>';
+
+            foreach ($item->classes as $itemClass) {
+                if ($itemClass == 'menu-item-has-children'){
+                    $item->classes[] = 'double-width';
+                }
+            }
+
+            if ( $item->menu_item_parent && $item->menu_item_parent > 0 ) {
+                $item->classes[] = 'col-xs-12 col-md-6';
+            }
+        }
+    }
+
+
+    return $items;
+}
+
+//add_menu_parent_class to menu
+add_filter( 'wp_nav_menu_objects', 'add_menu_parent_class');
+
+//Add class if the number of items is getting long
+//function html5blank_nav_classes( $classes, $item, $args ) {
+//    // Only affect the menu placed in the 'secondary' wp_nav_bar() theme location
+//    if ( 'header-menu' === $args->theme_location && $item->menu_item_parent) {
+//        if ($args->count > 3) {
+//            // Make these items 3-columns wide in Bootstrap
+//            $classes[] = 'col-xs-6';
+//        }
+//    }
+//    return $classes;
+//}
+//
+//add_filter( 'nav_menu_css_class', 'html5blank_nav_classes', 10, 3 );
+
 // Load HTML5 Blank scripts (header.php)
 function html5blank_header_scripts()
 {
