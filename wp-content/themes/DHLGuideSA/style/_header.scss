@@ -362,6 +362,10 @@ body {
                     &.double-width {
                       .dropdown-menu {
                         width: 200%;
+                        min-width: 325px;
+                        li {
+                          min-width: 162px;
+                        }
                       }
                     }
                     .dropdown-menu {

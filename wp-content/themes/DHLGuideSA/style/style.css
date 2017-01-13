@@ -389,7 +389,10 @@ body {
                   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 );
                   /* IE6-9 */ }
                 body .headerContainer .header .headerWrapper .navbar .navbar-collapse ul.navbar-nav .menu-item.open.double-width .dropdown-menu {
-                  width: 200%; }
+                  width: 200%;
+                  min-width: 325px; }
+                  body .headerContainer .header .headerWrapper .navbar .navbar-collapse ul.navbar-nav .menu-item.open.double-width .dropdown-menu li {
+                    min-width: 162px; }
                 body .headerContainer .header .headerWrapper .navbar .navbar-collapse ul.navbar-nav .menu-item.open .dropdown-menu {
                   left: 0;
                   right: auto;
