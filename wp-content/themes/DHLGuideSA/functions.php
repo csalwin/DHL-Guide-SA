@@ -120,7 +120,7 @@ function add_menu_parent_class( $items ) {
             }
 
             if ( $item->menu_item_parent && $item->menu_item_parent > 0 ) {
-                $item->classes[] = 'col-xs-12 col-md-6';
+                $item->classes[] = 'col-xs-12 col-lg-6';
             }
         }
     }
