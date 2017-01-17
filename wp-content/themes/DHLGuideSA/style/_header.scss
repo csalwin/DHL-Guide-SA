@@ -346,6 +346,14 @@ body {
             }
 
             ul.navbar-nav {
+              .menu-item {
+                &.open {
+                  .dropdown-menu {
+                    overflow: hidden;
+                  }
+
+                }
+              }
 
               @include desktop {
                 .menu-item {

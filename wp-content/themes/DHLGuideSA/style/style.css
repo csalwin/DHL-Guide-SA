@@ -374,6 +374,8 @@ body {
                   float: right;
                   top: 20px;
                   right: -20px; } }
+            body .headerContainer .header .headerWrapper .navbar .navbar-collapse ul.navbar-nav .menu-item.open .dropdown-menu {
+              overflow: hidden; }
             @media only screen and (min-width: 1200px) {
               body .headerContainer .header .headerWrapper .navbar .navbar-collapse ul.navbar-nav {
                 padding-right: 20px; }

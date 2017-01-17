@@ -191,7 +191,7 @@ function html5blank_styles()
     wp_register_style('bxsliderCSS', get_template_directory_uri() . '/js/bxslider/jquery.bxslider.css', array(), '1.0');
     wp_enqueue_style('bxsliderCSS'); // Enqueue it!
 
-    wp_register_style('html5blank', get_template_directory_uri() . '/style/style.css', array(), '1.2', 'all');
+    wp_register_style('html5blank', get_template_directory_uri() . '/style/style.css', array(), '1.3', 'all');
     wp_enqueue_style('html5blank'); // Enqueue it!
 }
 
