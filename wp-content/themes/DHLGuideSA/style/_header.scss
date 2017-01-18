@@ -12,7 +12,7 @@ body {
     -moz-transition: transform 0.3s;
     -o-transition: transform 0.3s;
     transition: transform 0.3s;
-    overflow: hidden;
+    overflow-x: hidden;
 
     @include tablet {
       -webkit-transform: translateX(0%);
@@ -207,7 +207,9 @@ body {
             width: 80%;
             max-width: 280px;
             background: none;
-            height: 8000px !important;
+            //height: 8000px !important;
+            overflow: scroll;
+
             &.showsidebar {
               display: block;
             }
